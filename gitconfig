@@ -1,0 +1,39 @@
+[alias]
+  aa = add --all
+  amend = commit --amend -C HEAD
+  ap = add --patch
+  au = add -u
+  b = branch
+  ci = commit -v
+  co = checkout
+  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+  d = diff
+  dc = diff --cached
+  l = "!git ll -12"
+  la = "!git ll --all"
+  ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
+  lt = "!git ll --simplify-by-decoration"
+  rba = rebase --abort
+  rbc = rebase --continue
+  s = status -sb
+  wd = diff --word-diff
+[color]
+  ui = auto
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[fetch]
+  prune = true
+[github]
+  user = thorncp
+[grep]
+  lineNumber = true
+[merge]
+  ff = only
+[push]
+  default = current
+[rebase]
+  autosquash = true
+[user]
+  name = Chris Thorn
+  email = chris@thorn.co

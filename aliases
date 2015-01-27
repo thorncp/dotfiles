@@ -1,0 +1,2 @@
+alias v=$VISUAL
+alias ag="ag --pager 'less -R'"
