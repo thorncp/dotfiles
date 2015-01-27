@@ -5,6 +5,10 @@ bindkey '^[[1;5D' backward-word # mapped in iterm as ctrl+left
 
 export PATH=~/bin:$PATH
 
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
+
 # makes color constants available
 autoload -U colors
 colors
