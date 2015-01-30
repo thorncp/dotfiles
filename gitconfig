@@ -16,6 +16,7 @@
   rba = rebase --abort
   rbc = rebase --continue
   s = status -sb
+  todo = "!git grep TODO -- $(git diff --name-only master...HEAD)"
   wd = diff --word-diff
 [color]
   ui = auto
