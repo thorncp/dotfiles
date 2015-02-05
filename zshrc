@@ -5,6 +5,9 @@ bindkey '^[[1;5D' backward-word # mapped in iterm as ctrl+left
 
 export PATH=~/bin:$PATH
 
+autoload -U compinit
+compinit
+
 HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
