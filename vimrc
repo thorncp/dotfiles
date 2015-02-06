@@ -61,15 +61,11 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-  " Enable spellchecking for Markdown
-  autocmd FileType markdown setlocal spell
-
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-  " Automatically wrap at 72 characters and spell check git commit messages
+  " Automatically wrap at 72 characters fo git commit messages
   autocmd FileType gitcommit setlocal textwidth=72
-  autocmd FileType gitcommit setlocal spell
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
@@ -139,6 +135,9 @@ nnoremap <C-l> <C-w>l
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
+
+" Spell check ALL THE THINGS
+set spell
 
 " Always use vertical diffs
 set diffopt+=vertical
