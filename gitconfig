@@ -17,7 +17,7 @@
   rbc = rebase --continue
   s = status -sb
   squash = "!git commit --squash $(git log --oneline | grep -v squash | head -n 1 | awk '{ print $1 }')"
-  todo = "!git grep TODO -- $(git diff --name-only master...HEAD)"
+  todo = "!git grep TODO -- $(git diff --name-only ${1:-master}...HEAD)"
   wd = diff --word-diff
 [color]
   ui = auto
