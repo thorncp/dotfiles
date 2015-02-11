@@ -9,6 +9,7 @@
   co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
   d = diff
   dc = diff --cached
+  fixup = "!git commit --fixup $(git squash-target)"
   l = "!git ll -12"
   la = "!git ll --all"
   ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
@@ -16,7 +17,9 @@
   rba = rebase --abort
   rbc = rebase --continue
   s = status -sb
-  squash = "!git commit --squash $(git log --oneline | grep -v squash | head -n 1 | awk '{ print $1 }')"
+  squash = "!git commit --squash $(git squash-target)"
+  # first parent whose commit message does not contain squash! or fixup!
+  squash-target = "!git log --oneline | grep -v 'squash!\\|fixup!' | head -n 1 | awk '{ print $1 }'"
   todo = "!git grep TODO -- $(git diff --name-only ${1:-master}...HEAD)"
   wd = diff --word-diff
 [color]
