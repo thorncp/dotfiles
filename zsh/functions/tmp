@@ -1,0 +1,6 @@
+# open temp file with specifiable extension. default is 'md'
+
+tmp() {
+  extension="${1:=md}"
+  $EDITOR ~/tmp.$extension
+}

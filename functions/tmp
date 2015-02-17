@@ -1,5 +1,0 @@
-# open temp markdown file
-
-tmp() {
-  $EDITOR ~/tmp.md
-}
