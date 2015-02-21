@@ -38,7 +38,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-set foldmethod=syntax " Fold based on syntax definitions
+set foldmethod=indent " Fold based on syntax definitions
 set foldlevelstart=99 " Don't fold anything in new buffers
 
 " set cursorline only for the current buffer
