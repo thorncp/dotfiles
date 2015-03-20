@@ -166,3 +166,8 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
+
+" Semantically execute files
+nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
+autocmd BufNewFile,BufReadPost *.md nnoremap <buffer> <leader>x :silent !open -a Marked\ 2.app %<cr> :redraw!<cr>
+autocmd BufNewFile,BufReadPost *.rb nnoremap <buffer> <leader>x :!clear; ruby %<cr>
