@@ -161,3 +161,6 @@ set incsearch " highlight search results while typing
 
 " I have never executed this on purpose. perhaps I should learn about it
 nnoremap Q <nop>
+
+" % to bounce from do to end etc.
+runtime! macros/matchit.vim
