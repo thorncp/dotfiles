@@ -126,7 +126,6 @@ map <Leader>ct :!ctags -R .<CR>
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
 let g:rspec_command = "!clear; bundle exec rspec --format documentation {spec}"
 
 " Treat <li> and <p> tags like the block tags they are
