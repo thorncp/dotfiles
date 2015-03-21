@@ -1,5 +1,5 @@
 function specdiff() {
-  pattern="describe\|it\|context\|specify"
+  pattern="describe\|it\|context\|specify\|scenario\|feature"
 
   ${DIFF:-diff} -b -U 3 \
     <(git grep -w -h --no-line-number --no-color -e $pattern ${1:-master} -- spec/) \
