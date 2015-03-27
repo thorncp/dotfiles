@@ -23,6 +23,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ctags.vim'
+Plugin 'vim-scripts/forth.vim'
 Plugin 'wting/rust.vim'
 
 call vundle#end()
@@ -66,19 +67,6 @@ augroup vimrcEx
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-  " Automatically wrap at 72 characters fo git commit messages
-  autocmd FileType gitcommit setlocal textwidth=72
-
-  " Allow stylesheets to autocomplete hyphenated words
-  autocmd FileType css,scss,sass setlocal iskeyword+=-
 augroup END
 
 colorscheme railscasts256
@@ -161,13 +149,8 @@ set incsearch " highlight search results while typing
 " I have never executed this on purpose. perhaps I should learn about it
 nnoremap Q <nop>
 
-au BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
-
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
 " Semantically execute files
 nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
-autocmd BufNewFile,BufReadPost *.md nnoremap <buffer> <leader>x :silent !open -a Marked\ 2.app %<cr> :redraw!<cr>
-autocmd BufNewFile,BufReadPost *.rb nnoremap <buffer> <leader>x :!clear; ruby %<cr>
