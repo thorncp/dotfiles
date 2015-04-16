@@ -72,6 +72,11 @@ augroup END
 
 colorscheme railscasts
 
+" Better grammatical error styling
+highlight SpellBad ctermbg=NONE cterm=underline
+highlight SpellRare ctermbg=NONE cterm=underline
+highlight SpellCap ctermbg=NONE cterm=underline
+
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
