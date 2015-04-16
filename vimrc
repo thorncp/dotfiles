@@ -9,6 +9,7 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
@@ -69,7 +70,7 @@ augroup vimrcEx
     \ endif
 augroup END
 
-colorscheme railscasts256
+colorscheme railscasts
 
 " Softtabs, 2 spaces
 set tabstop=2
