@@ -39,3 +39,6 @@ exit_color="%{$fg[green]%}%(?..%{$fg[red]%})"
 setopt promptsubst
 export PS1='${exit_color}%~%{$reset_color%}$(git_prompt_info)
 %# '
+
+autoload -U select-word-style
+select-word-style bash
