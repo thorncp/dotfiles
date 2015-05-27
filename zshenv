@@ -1,3 +1,6 @@
+export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=screen-256color
+
 export VISUAL=vim
 export EDITOR=$VISUAL
 export DIFF=colordiff
