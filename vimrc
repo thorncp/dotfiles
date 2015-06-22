@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'chankaward/vim-railscasts-theme'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
@@ -162,3 +163,6 @@ runtime! macros/matchit.vim
 
 " Semantically execute files
 nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
