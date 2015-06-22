@@ -147,7 +147,7 @@ set spell
 set diffopt+=vertical
 
 set scrolloff=2 " keep some context above and below after a jump
-set noesckeys " causes a delay when using ctrl + [
+set noesckeys " remove delay when using ctrl + [
 set hlsearch " highlight search results
 set incsearch " highlight search results while typing
 
