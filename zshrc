@@ -1,7 +1,7 @@
 bindkey -e
 
-bindkey '^[[1;5C' forward-word # mapped in iterm as ctrl+right
-bindkey '^[[1;5D' backward-word # mapped in iterm as ctrl+left
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
 
 export PATH=~/bin:$PATH
 
