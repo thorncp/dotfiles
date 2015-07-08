@@ -19,6 +19,8 @@ colors
 # enable colored output from ls, etc
 export CLICOLOR=1
 
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # load custom executable functions
