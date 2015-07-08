@@ -1,9 +1,12 @@
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 export DIFF=colordiff
+
+# run NeoVim in true color mode
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:$PATH"

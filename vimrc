@@ -124,7 +124,7 @@ map <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --exclude=bower_
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
-let g:rspec_command = "!clear; bundle exec rspec --format documentation {spec}"
+let g:rspec_command = 'execute "enew" | execute "call termopen(\"bundle exec rspec --format documentation {spec}\")"'
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
