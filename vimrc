@@ -119,7 +119,7 @@ set number
 set numberwidth=5
 
 " Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
+map <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --exclude=bower_components --exclude=tmp .<CR>
 
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
