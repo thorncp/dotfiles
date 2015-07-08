@@ -154,8 +154,16 @@ set noesckeys " remove delay when using ctrl + [
 set hlsearch " highlight search results
 set incsearch " highlight search results while typing
 
-" disable search highlight on enter
-:nnoremap <CR> :nohlsearch<cr>
+function SwitchToAlternateBufferIfInTerminal()
+  if expand('%') =~ '^term://'
+    execute "e #"
+  endif
+endfunction
+
+" disable search highlight on enter and do some shenanigans to approximate
+" behavior of :! commands. that is, <cr> when the buffer is currently a
+" terminal, switch to the previous buffer
+:nnoremap <CR> :nohlsearch <bar> :call SwitchToAlternateBufferIfInTerminal()<cr>
 
 " I have never executed this on purpose. perhaps I should learn about it
 nnoremap Q <nop>
