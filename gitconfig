@@ -1,6 +1,6 @@
 [alias]
   aa = add --all
-  amend = commit --amend -C HEAD
+  amend = "!git commit --amend -C HEAD --date=$(date +%Y-%m-%dT%H:%M:%S)"
   ap = add --patch
   au = add -u
   b = branch
