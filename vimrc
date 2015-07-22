@@ -161,7 +161,7 @@ function SwitchToAlternateBufferIfInTerminal()
 endfunction
 
 " disable search highlight on enter
-:nnoremap <CR> :nohlsearch<cr>
+:nnoremap <CR> :nohlsearch<cr> <cr>
 
 " I have never executed this on purpose. perhaps I should learn about it
 nnoremap Q <nop>
