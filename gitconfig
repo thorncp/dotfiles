@@ -14,6 +14,7 @@
   la = "!git ll --all"
   ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
   lt = "!git ll --simplify-by-decoration"
+  pf = push --force-with-lease
   rba = rebase --abort
   rbc = rebase --continue
   s = status -sb
