@@ -28,6 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/forth.vim'
+Plug 'vim-scripts/haskell.vim'
 Plug 'wting/rust.vim'
 
 call plug#end()
