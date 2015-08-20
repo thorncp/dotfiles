@@ -15,6 +15,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'rking/ag.vim'
 Plug 'slim-template/vim-slim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-commentary'
@@ -108,6 +109,9 @@ if executable('ag')
   " keeps working dir the same as when vim launched.
   " changing dirs from underneath me is confusing as hell.
   let g:ctrlp_working_path_mode = 0
+
+  " start searching from your project root instead of the cwd
+  let g:ag_working_path_mode="r"
 endif
 
 " Make it obvious where 80 characters is
