@@ -179,3 +179,10 @@ nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+" set up undo file in home directory
+if isdirectory($HOME . '/.vim/undo') == 0
+  :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+endif
+set undofile
+set undodir=~/.vim/undo/
