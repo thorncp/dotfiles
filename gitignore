@@ -9,3 +9,4 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 .foreman
+.env.local
