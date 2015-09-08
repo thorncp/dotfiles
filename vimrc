@@ -118,6 +118,9 @@ endif
 set textwidth=80
 set colorcolumn=+1
 
+" Stop syntax highlighting at 120 characters
+set synmaxcol=120
+
 " Numbers
 set relativenumber
 set number
