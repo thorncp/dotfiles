@@ -5,9 +5,9 @@ export PATH=~/bin:$PATH
 autoload -U compinit
 compinit
 
-HISTFILE=~/.zhistory
-HISTSIZE=4096
-SAVEHIST=4096
+export HISTFILE=~/.zhistory
+export HISTSIZE=4096
+export SAVEHIST=4096
 
 # makes color constants available
 autoload -U colors
