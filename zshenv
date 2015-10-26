@@ -5,9 +5,6 @@ export EDITOR=$VISUAL
 export DIFF=colordiff
 export GOPATH=$HOME/go
 
-# run NeoVim in true color mode
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 export PATH=$PATH:$GOPATH/bin
