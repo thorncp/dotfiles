@@ -56,6 +56,7 @@ augroup CursorLine
 augroup END
 
 syntax off
+:highlight Normal ctermfg=black ctermbg=white
 
 filetype plugin indent on
 
