@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# set -e
+
+docker_shit() {
+  docker machine start default
+  eval "$(docker-machine env default)"
+}
