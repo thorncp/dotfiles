@@ -7,7 +7,6 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'cespare/vim-toml'
-Plug 'chankaward/vim-railscasts-theme'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'exu/pgsql.vim'
@@ -75,8 +74,6 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 augroup END
-
-colorscheme railscasts
 
 " Better grammatical error styling
 highlight SpellBad ctermbg=NONE cterm=underline
