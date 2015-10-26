@@ -114,6 +114,8 @@ if executable('ag')
   let g:ag_working_path_mode="r"
 endif
 
+nnoremap K :Ag! <C-R><C-W><CR>
+
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
