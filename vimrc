@@ -152,7 +152,7 @@ nnoremap <C-l> <C-w>l
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Spell check ALL THE THINGS
-set spell
+" set spell
 
 " Always use vertical diffs
 set diffopt+=vertical
