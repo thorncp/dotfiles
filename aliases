@@ -1,2 +1,2 @@
-alias ag="ag --pager 'less -R'"
+alias ag="ag --pager 'less -R' --color-line-number '1;34'"
 alias v="$VISUAL"
