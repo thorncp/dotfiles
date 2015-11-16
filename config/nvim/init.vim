@@ -110,3 +110,8 @@ if executable('ag')
   " start searching from your project root instead of the cwd
   let g:ag_working_path_mode="r"
 endif
+
+function! RunTerminalCommandInTab(command)
+  tabnew
+  execute 'terminal' a:command
+endfunction
