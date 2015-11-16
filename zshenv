@@ -1,6 +1,6 @@
 export TERM=xterm-256color
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 export DIFF=colordiff
 export GOPATH=$HOME/go
