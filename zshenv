@@ -6,8 +6,8 @@ export DIFF=colordiff
 export GOPATH=$HOME/go
 
 # ensure dotfiles bin directory is loaded first
-export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
-export PATH=$PATH:$GOPATH/bin
+PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+PATH=$PATH:$GOPATH/bin
 
 # load rbenv if available
 if which rbenv &>/dev/null ; then
@@ -15,4 +15,6 @@ if which rbenv &>/dev/null ; then
 fi
 
 # mkdir .git/safe in the root of repositories you trust
-export PATH=".git/safe/../../bin:$PATH"
+PATH=".git/safe/../../bin:$PATH"
+
+export -U PATH
