@@ -73,7 +73,7 @@ set hlsearch " highlight search results
 set incsearch " highlight search results while typing
 
 " disable search highlight on enter
-:nnoremap <CR> :nohlsearch<cr>
+:nnoremap <CR> :nohlsearch<cr><cr>
 
 runtime! macros/matchit.vim
 
