@@ -42,8 +42,7 @@ augroup CursorLine
     au WinLeave * setlocal nocursorline
 augroup END
 
-" this doesn't seem to be working
-syntax off
+syntax on
 
 " Better grammatical error styling
 highlight SpellBad ctermbg=NONE cterm=underline
