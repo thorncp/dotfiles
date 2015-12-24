@@ -35,6 +35,9 @@ set nowritebackup
 set noswapfile
 set ruler
 
+set ignorecase
+set smartcase
+
 " set cursorline only for the current buffer
 augroup CursorLine
     au!
