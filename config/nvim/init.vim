@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'benekastah/neomake'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -84,6 +85,8 @@ nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+autocmd! BufWritePost * Neomake
 
 " set up undo file in home directory
 if isdirectory($HOME . '/.config/nvim/undo') == 0
