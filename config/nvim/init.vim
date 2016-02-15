@@ -4,13 +4,13 @@ Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'exu/pgsql.vim'
+Plug 'janko-m/vim-test'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'slim-template/vim-slim'
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -141,3 +141,11 @@ augroup checktime
     autocmd BufEnter,CursorHold,CursorHoldI,CursorMoved,CursorMovedI,FocusGained,BufEnter,FocusLost,WinLeave * checktime
   endif
 augroup END
+
+nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>T :TestFile<CR>
+nnoremap <silent> <leader>a :TestSuite<CR>
+nnoremap <silent> <leader>l :TestLast<CR>
+nnoremap <silent> <leader>g :TestVisit<CR>
+
+let test#strategy = "neovim"
