@@ -54,6 +54,8 @@ highlight SpellBad ctermbg=NONE cterm=underline
 highlight SpellRare ctermbg=NONE cterm=underline
 highlight SpellCap ctermbg=NONE cterm=underline
 
+set spell
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
@@ -155,3 +157,13 @@ nnoremap <silent> <leader>l :TestLast<CR>
 nnoremap <silent> <leader>g :TestVisit<CR>
 
 let test#strategy = "neovim"
+
+function! ToggleSyntax()
+  if exists("g:syntax_on")
+    syntax off
+  else
+    syntax enable
+  endif
+endfunction
+
+nnoremap <leader>s :call ToggleSyntax()<cr>
