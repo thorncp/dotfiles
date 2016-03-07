@@ -54,7 +54,7 @@ highlight SpellBad ctermbg=NONE cterm=underline
 highlight SpellRare ctermbg=NONE cterm=underline
 highlight SpellCap ctermbg=NONE cterm=underline
 
-set spell
+set spell spellcapcheck=
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
