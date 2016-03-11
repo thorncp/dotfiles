@@ -122,7 +122,7 @@ if executable('ag')
 endif
 
 function! RunTerminalCommandInTab(command)
-  tabnew
+  -tabnew
   execute 'terminal' a:command
 endfunction
 
