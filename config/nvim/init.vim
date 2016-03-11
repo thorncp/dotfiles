@@ -156,7 +156,12 @@ nnoremap <silent> <leader>a :TestSuite<CR>
 nnoremap <silent> <leader>l :TestLast<CR>
 nnoremap <silent> <leader>g :TestVisit<CR>
 
-let test#strategy = "neovim"
+function! NeovimTabStrategy(cmd)
+  call RunTerminalCommandInTab(a:cmd)
+endfunction
+
+let g:test#custom_strategies = {'neovim-tab': function('NeovimTabStrategy')}
+let g:test#strategy = 'neovim-tab'
 
 function! ToggleSyntax()
   if exists("g:syntax_on")
