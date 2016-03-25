@@ -1,3 +1,3 @@
 syntax on
-set spell
+setlocal spell
 setlocal textwidth=72
