@@ -58,7 +58,7 @@ highlight SpellCap ctermbg=NONE cterm=underline
 set spell spellcapcheck=
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set list listchars=tab:»\ ,trail:·,nbsp:·
 
 " Make it obvious where 80 characters is
 set textwidth=80
