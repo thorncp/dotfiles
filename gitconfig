@@ -26,6 +26,8 @@
   wd = diff --word-diff
 [color]
   ui = auto
+[commit]
+  gpgsign = true
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -45,3 +47,4 @@
 [user]
   name = Chris Thorn
   email = chris@thorn.co
+  signingkey = F8AC4201
