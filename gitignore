@@ -10,3 +10,4 @@ tmp/**/*
 !tmp/cache/.keep
 .foreman
 .env.local
+.byebug_history
