@@ -22,6 +22,7 @@
   squash = "!git ci --squash $(git squash-target)"
   # first parent whose commit message does not contain squash! or fixup!
   squash-target = "!git log --oneline | grep -v 'squash!\\|fixup!' | head -n 1 | awk '{ print $1 }'"
+  ss = diff --shortstat
   todo = "!git grep TODO -- $(git diff --name-only ${1:-master}...HEAD)"
   wd = diff --word-diff
 [color]
