@@ -1,5 +1,6 @@
 bindkey -e
 
+PATH="$HOME/.cargo/bin:$PATH"
 export PATH=~/bin:$PATH
 
 autoload -U compinit
