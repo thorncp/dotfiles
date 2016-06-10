@@ -59,6 +59,9 @@ set spell spellcapcheck=
 
 " Display extra whitespace
 set list listchars=tab:»\ ,trail:·,nbsp:·
+setlocal tabstop=2
+setlocal shiftwidth=2
+setlocal expandtab
 
 " Make it obvious where 80 characters is
 set textwidth=80
