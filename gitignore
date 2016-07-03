@@ -11,3 +11,4 @@ tmp/**/*
 .foreman
 .env.local
 .byebug_history
+*.beam
