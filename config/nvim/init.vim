@@ -49,7 +49,7 @@ augroup CursorLine
     au WinLeave * setlocal nocursorline
 augroup END
 
-syntax on
+syntax off
 
 " Better grammatical error styling
 highlight SpellBad ctermbg=NONE cterm=underline
@@ -167,13 +167,3 @@ endfunction
 
 let g:test#custom_strategies = {'neovim-tab': function('NeovimTabStrategy')}
 let g:test#strategy = 'neovim-tab'
-
-function! ToggleSyntax()
-  if exists("g:syntax_on")
-    syntax off
-  else
-    syntax enable
-  endif
-endfunction
-
-nnoremap <leader>s :call ToggleSyntax()<cr>
