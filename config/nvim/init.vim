@@ -39,6 +39,8 @@ set nowritebackup
 set noswapfile
 set ruler
 
+set mouse=
+
 set ignorecase
 set smartcase
 
