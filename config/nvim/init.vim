@@ -51,12 +51,7 @@ augroup CursorLine
     au WinLeave * setlocal nocursorline
 augroup END
 
-syntax off
-
-" Better grammatical error styling
-highlight SpellBad ctermbg=NONE cterm=underline
-highlight SpellRare ctermbg=NONE cterm=underline
-highlight SpellCap ctermbg=NONE cterm=underline
+syntax on
 
 set spell spellcapcheck=
 
@@ -169,3 +164,5 @@ endfunction
 
 let g:test#custom_strategies = {'neovim-tab': function('NeovimTabStrategy')}
 let g:test#strategy = 'neovim-tab'
+
+colorscheme hello
