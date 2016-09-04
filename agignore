@@ -4,3 +4,4 @@ tmp
 .git/
 node_modules
 bower_components
+_build/
