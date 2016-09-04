@@ -5,3 +5,4 @@ tmp
 node_modules
 bower_components
 _build/
+deps/
