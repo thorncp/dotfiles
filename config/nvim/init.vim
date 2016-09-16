@@ -165,4 +165,4 @@ endfunction
 let g:test#custom_strategies = {'neovim-tab': function('NeovimTabStrategy')}
 let g:test#strategy = 'neovim-tab'
 
-colorscheme hello
+colorscheme default
