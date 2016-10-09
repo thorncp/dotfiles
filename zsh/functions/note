@@ -1,6 +1,6 @@
 # opens date stamped file whose name is based on the args given
 
-note() {
+qnote() {
   if [ -e $1 ]; then
     echo "No name given"
     echo "Usage: note <name>"
