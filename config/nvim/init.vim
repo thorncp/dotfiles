@@ -9,6 +9,7 @@ Plug 'exu/pgsql.vim'
 Plug 'janko-m/vim-test'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
 Plug 'nicholaides/words-to-avoid.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -166,3 +167,5 @@ let g:test#custom_strategies = {'neovim-tab': function('NeovimTabStrategy')}
 let g:test#strategy = 'neovim-tab'
 
 colorscheme default
+
+let g:jsx_ext_required = 0
