@@ -72,7 +72,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>
+nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
