@@ -1,0 +1,56 @@
+#!/usr/bin/env zsh
+
+NOTES_DIR=${NOTES_DIR:-~/.notes}
+
+new-note() {
+  context="$1"
+  if [ -z "$context" ]; then
+    echo "context expected" >&2
+    return 1
+  fi
+
+  datestamp=$(date +"%F")
+  tempfile="$(mktemp -t note).md"
+  $EDITOR "$tempfile"
+  mkdir -p "$NOTES_DIR/$context"
+  cat "$tempfile" >> "$NOTES_DIR/$context/$datestamp.md"
+  echo >> "$NOTES_DIR/$context/$datestamp.md"
+}
+
+find-note() {
+  pattern="$1"
+  if [ -z "$pattern" ]; then
+    echo "pattern expected" >&2
+    return 1
+  fi
+
+  note=$(ag --nogroup "$pattern" "$NOTES_DIR" | sed "s|$NOTES_DIR||" | selecta)
+  note_file=$(echo "$note" | cut -d : -f 1)
+  note_file_number=$(echo "$note" | cut -d : -f 2)
+  $EDITOR "+$note_file_number" "$NOTES_DIR/$note_file"
+}
+
+note() {
+  case "$1" in
+    ("new")
+      new-note "${@:2}"
+      ;;
+    ("find")
+      find-note "${@:2}"
+      ;;
+    (*)
+      echo "command expected" >&2
+      return 1
+      ;;
+  esac
+}
+
+_new-note-completion() {
+  completions="$(ls "$NOTES_DIR")"
+  reply=("${(ps:\n:)completions}")
+}
+
+compctl -k '(find new)' \
+  -x 'c[-1,find]' -k '()' \
+  - 'c[-1,new]' -K _new-note-completion \
+  -- note
