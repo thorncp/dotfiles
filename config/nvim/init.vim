@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'benekastah/neomake'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -27,7 +28,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/forth.vim'
 Plug 'vim-scripts/haskell.vim'
-Plug 'w0rp/ale'
 Plug 'wting/rust.vim'
 
 call plug#end()
@@ -93,6 +93,8 @@ nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+autocmd! BufWritePost * Neomake
 
 " set up undo file in home directory
 if isdirectory($HOME . '/.config/nvim/undo') == 0
@@ -167,10 +169,3 @@ let g:test#strategy = 'neovim-tab'
 colorscheme default
 
 let g:jsx_ext_required = 0
-
-let g:ale_linters = {
-      \   'javascript': ['eslint'],
-      \ }
-
-nmap <silent> [a <Plug>(ale_previous_wrap)
-nmap <silent> ]a <Plug>(ale_next_wrap)
