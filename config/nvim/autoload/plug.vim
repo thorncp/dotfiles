@@ -18,7 +18,7 @@
 "   " Any valid git URL is allowed
 "   Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "
-"   " Group dependencies, vim-snippets depends on ultisnips
+"   " Multiple Plug commands can be written in a single line using | separators
 "   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "
 "   " On-demand loading
@@ -40,7 +40,7 @@
 "   " Unmanaged plugin (manually installed and updated)
 "   Plug '~/my-prototype-plugin'
 "
-"   " Add plugins to &runtimepath
+"   " Initialize plugin system
 "   call plug#end()
 "
 " Then reload .vimrc and :PlugInstall to install plugins.
@@ -61,7 +61,7 @@
 " More information: https://github.com/junegunn/vim-plug
 "
 "
-" Copyright (c) 2016 Junegunn Choi
+" Copyright (c) 2017 Junegunn Choi
 "
 " MIT License
 "
@@ -919,7 +919,8 @@ function! s:check_ruby()
 endfunction
 
 function! s:update_impl(pull, force, args) abort
-  let args = copy(a:args)
+  let sync = index(a:args, '--sync') >= 0 || has('vim_starting')
+  let args = filter(copy(a:args), 'v:val != "--sync"')
   let threads = (len(args) > 0 && args[-1] =~ '^[1-9][0-9]*$') ?
                   \ remove(args, -1) : get(g:, 'plug_threads', 16)
 
@@ -1020,7 +1021,7 @@ function! s:update_impl(pull, force, args) abort
     endtry
   else
     call s:update_vim()
-    while use_job && has('vim_starting')
+    while use_job && sync
       sleep 100m
       if s:update.fin
         break
@@ -1142,6 +1143,9 @@ endfunction
 function! s:job_exit_cb(self, data) abort
   let a:self.running = 0
   let a:self.error = a:data != 0
+  if has_key(a:self, 'tempname')
+    call delete(a:self.tempname)
+  endif
   call s:reap(a:self.name)
   call s:tick()
 endfunction
@@ -1163,8 +1167,8 @@ function! s:spawn(name, cmd, opts)
   let job = { 'name': a:name, 'running': 1, 'error': 0, 'lines': [''],
             \ 'new': get(a:opts, 'new', 0) }
   let s:jobs[a:name] = job
-  let argv = add(s:is_win ? ['cmd', '/c'] : ['sh', '-c'],
-               \ has_key(a:opts, 'dir') ? s:with_cd(a:cmd, a:opts.dir) : a:cmd)
+  let cmd = has_key(a:opts, 'dir') ? s:with_cd(a:cmd, a:opts.dir) : a:cmd
+  let argv = s:is_win ? cmd : ['sh', '-c', cmd]
 
   if s:nvim
     call extend(job, {
@@ -1181,6 +1185,11 @@ function! s:spawn(name, cmd, opts)
             \ 'Invalid arguments (or job table is full)']
     endif
   elseif s:vim8
+    if s:is_win
+      let job.tempname = tempname().'.bat'
+      call writefile([argv], job.tempname)
+      let argv = job.tempname
+    endif
     let jid = job_start(argv, {
     \ 'out_cb':   function('s:job_cb', ['s:job_out_cb',  job]),
     \ 'exit_cb':  function('s:job_cb', ['s:job_exit_cb', job]),
@@ -2288,7 +2297,12 @@ function! s:preview_commit()
     wincmd P
   endif
   setlocal previewwindow filetype=git buftype=nofile nobuflisted modifiable
-  execute 'silent %!cd' s:shellesc(g:plugs[name].dir) '&& git show --no-color --pretty=medium' sha
+  try
+    let [sh, shrd] = s:chsh(1)
+    execute 'silent %!cd' s:shellesc(g:plugs[name].dir) '&& git show --no-color --pretty=medium' sha
+  finally
+    let [&shell, &shellredir] = [sh, shrd]
+  endtry
   setlocal nomodifiable
   nnoremap <silent> <buffer> q :q<cr>
   wincmd p
