@@ -13,3 +13,5 @@ PATH=$PATH:$GOPATH/bin
 PATH=".git/safe/../../bin:$PATH"
 
 export -U PATH
+
+source "$HOME/.rvm/scripts/rvm"
