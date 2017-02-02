@@ -43,6 +43,6 @@ PS1='${exit_color}%~%{$reset_color%}$(git_prompt_info)
 autoload -U select-word-style
 select-word-style bash
 
-PATH="$PATH:$HOME/.rvm/bin"
-
 export PATH
+
+eval "$(rbenv init -)"
