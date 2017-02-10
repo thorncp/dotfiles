@@ -46,3 +46,5 @@ select-word-style bash
 export PATH
 
 eval "$(rbenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

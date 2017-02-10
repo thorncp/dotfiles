@@ -3,10 +3,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'benekastah/neomake'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'exu/pgsql.vim'
 Plug 'janko-m/vim-test'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
@@ -68,6 +68,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+nnoremap <C-p> :FZF<CR>
 
 nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
 
