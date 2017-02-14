@@ -11,6 +11,7 @@
   d = diff
   dc = diff --cached
   fixup = "!git commit --fixup $(git squash-target)"
+  hound = "!git ci -m 'Hound'"
   l = "!git ll -12"
   la = "!git ll --all"
   ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
