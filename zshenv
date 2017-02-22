@@ -4,6 +4,7 @@ export VISUAL=nvim
 export EDITOR=$VISUAL
 export DIFF=colordiff
 export GOPATH=$HOME/go
+export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
