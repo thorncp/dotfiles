@@ -44,6 +44,7 @@
   lineNumber = true
 [merge]
   ff = only
+  tool = unityyamlmerge
 [push]
   default = current
 [rebase]
@@ -53,3 +54,6 @@
   email = chris@thorn.co
 [init]
   templatedir = ~/.git_template
+[mergetool "unityyamlmerge"]
+  trustExitCode = false
+  cmd = '/Applications/Unity/Unity.app/Contents/Tools/UnityYAMLMerge' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
