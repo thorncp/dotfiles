@@ -74,8 +74,27 @@ last-week() {
   less -ci "$tempfile"
 }
 
+edit() {
+  context="$1"
+  if [ -z "$context" ]; then
+    echo "context expected" >&2
+    return 1
+  fi
+
+  latest=$(ls "$NOTES_DIR/$context/"*.md | tail -1)
+
+  if [[ -a $latest ]]; then
+    $EDITOR $latest
+  else
+    return 1
+  fi
+}
+
 note() {
   case "$1" in
+    ("edit")
+      edit "${@:2}"
+      ;;
     ("new")
       new-note "${@:2}"
       ;;
@@ -100,8 +119,9 @@ _note-context-completion() {
   reply=("${(ps:\n:)completions}")
 }
 
-compctl -k '(find last-week new this-week)' \
+compctl -k '(edit find last-week new this-week)' \
   -x 'c[-1,find]' -k '()' \
+  - 'c[-1,edit]' -K _note-context-completion \
   - 'c[-1,new]' -K _note-context-completion \
   - 'c[-1,last-week]' -K _note-context-completion \
   - 'c[-1,this-week]' -K _note-context-completion \
