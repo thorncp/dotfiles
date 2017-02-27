@@ -1,66 +1,33 @@
+function! g:Include(file)
+  if filereadable(expand(a:file))
+    execute 'source' a:file
+  endif
+endfunction
+
+" Stolen wholesale from gfontenot, who stole it wholesale from gabebw, who stole
+" it wholesale from christoomey, whose dotfiles you really should check out:
+" https://github.com/christoomey/dotfiles
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/.config/nvim/' . a:directory . '/*.vim'
+  for config_file in split(glob(directory_splat), '\n')
+    call Include(config_file)
+  endfor
+endfunction
+
 call plug#begin('~/.config/nvim/plugged')
-
-Plug 'benekastah/neomake'
-Plug 'cespare/vim-toml'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'elixir-lang/vim-elixir'
-Plug 'exu/pgsql.vim'
-Plug 'janko-m/vim-test'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'kchmck/vim-coffee-script'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx'
-Plug 'nicholaides/words-to-avoid.vim'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'rking/ag.vim'
-Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/ctags.vim'
-Plug 'vim-scripts/forth.vim'
-Plug 'vim-scripts/haskell.vim'
-Plug 'wting/rust.vim'
-
+call s:SourceConfigFilesIn('plugins')
 call plug#end()
 
-set relativenumber
-set number
-set numberwidth=5
-set nobackup
-set nowritebackup
-set noswapfile
-set ruler
+call s:SourceConfigFilesIn('config')
 
 set mouse=
 
 set ignorecase
 set smartcase
 
-" set cursorline only for the current buffer
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-
 syntax on
 
 set spell spellcapcheck=
-
-" Display extra whitespace
-set list listchars=tab:»\ ,trail:·,nbsp:·
-
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -88,11 +55,6 @@ runtime! macros/matchit.vim
 " Semantically execute files
 nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
 
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-autocmd! BufWritePost * Neomake
-
 " set up undo file in home directory
 if isdirectory($HOME . '/.config/nvim/undo') == 0
   :silent !mkdir -p ~/.config/nvim/undo > /dev/null 2>&1
@@ -104,18 +66,6 @@ set undodir=~/.config/nvim/undo/
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  let g:ctrlp_max_height = 25
-
-  " keeps working dir the same as when vim launched.
-  " changing dirs from underneath me is confusing as hell.
-  let g:ctrlp_working_path_mode = 0
 
   " start searching from your project root instead of the cwd
   let g:ag_working_path_mode="r"
