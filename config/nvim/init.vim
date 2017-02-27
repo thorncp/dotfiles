@@ -77,7 +77,6 @@ set splitbelow
 set splitright
 
 set scrolloff=2 " keep some context above and below after a jump
-set noesckeys " remove delay when using ctrl + [
 set hlsearch " highlight search results
 set incsearch " highlight search results while typing
 
