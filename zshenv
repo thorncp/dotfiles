@@ -15,4 +15,4 @@ PATH=".git/safe/../../bin:$PATH"
 
 export -U PATH
 
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
