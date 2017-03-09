@@ -27,7 +27,7 @@
   ss = diff --shortstat
   todo = "!git grep TODO -- $(git diff --name-only ${1:-master}...HEAD)"
   wd = diff --word-diff
-  wip = "!git ci -m 'WIP [ci skip]'"
+  wip = "!f() { git ci -m \"WIP $* [ci skip]\"; }; f"
 [color]
   ui = auto
 [core]
