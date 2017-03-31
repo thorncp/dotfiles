@@ -25,136 +25,123 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/ctags.vim'
-Plug 'vim-scripts/forth.vim'
+Plug 'tvim-scripts/forth.vim'
 Plug 'vim-scripts/haskell.vim'
 Plug 'wting/rust.vim'
 
 call plug#end()
 
-set relativenumber
-set number
-set numberwidth=5
-set nobackup
-set nowritebackup
-set noswapfile
-set ruler
-
-set mouse=
-
-set ignorecase
-set smartcase
-
-" set cursorline only for the current buffer
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-
+" Enable syntax highlighting
 syntax on
 
-set spell spellcapcheck=
+" Use the default color scheme to avoid maintaining one
+colorscheme default
 
-" Display extra whitespace
+" Highlight search results, while the pattern is being typed
+set hlsearch incsearch
+
+" Searches are case insensitive by default. If the search pattern includes a
+" capital letter, it becomes case sensitive
+set ignorecase smartcase
+
+" Look up usage of word under cursor with `:Ag!` instead of `man`
+set keywordprg=:Ag! "\b<C-R><C-W>\b"
+
+" Tabs and trailing whitespace are visible
 set list listchars=tab:»\ ,trail:·,nbsp:·
 
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" Disable the mouse entirely
+set mouse=
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" Don't make a file backup when overwriting a file
+set nobackup nowritebackup
 
-nnoremap <C-p> :FZF<CR>
+" Don't keep a swap file. Previous file versions can be recovered from Git. If
+" the file isn't tracked by Git, it's either not important or I will be sad.
+set noswapfile
 
-nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
+" Give the number gutter plenty of room so the width is consistent when crossing
+" numbers with more digits, e.g. 99->100, 999->1000
+set numberwidth=5
+
+" `relativenumber` followed by `number` will show the absolute number at the
+" cursor location's line, and relative numbers for all other lines
+set relativenumber number
+
+" Show line and column number of cursor position
+set ruler
+
+" Start scrolling when the cursor is 2 lines from the bottom/top of screen.
+" Think of it like context in Grep or Ag.
+set scrolloff=2
+
+" Enable spell checking
+set spell
 
 " Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+set splitbelow splitright
 
-set scrolloff=2 " keep some context above and below after a jump
-set hlsearch " highlight search results
-set incsearch " highlight search results while typing
+" Make it obvious where 80 characters is
+set textwidth=80 colorcolumn=+1
 
-" disable search highlight on enter
-:nnoremap <CR> :nohlsearch<cr><cr>
+" Quicker window movement
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
 
+" Map ctrl+p to FZF because muscle memory is hard to break
+nnoremap <C-P> :FZF<CR>
+
+" Disable search highlight on return and behind perform default behavior
+nnoremap <CR> :nohlsearch<CR><CR>
+
+" Set up semantic execution of files. Prints a message by default. File types
+" can set their commands in config/nvim/ftplugin/*.vim
+nnoremap <LEADER>x :echo "Don't know how to execute ." . expand("%:e")<CR>
+
+" Mappings for vim-test
+nnoremap <SILENT> <LEADER>t :TestNearest<CR>
+nnoremap <SILENT> <LEADER>T :TestFile<CR>
+nnoremap <SILENT> <LEADER>a :TestSuite<CR>
+nnoremap <SILENT> <LEADER>l :TestLast<CR>
+nnoremap <SILENT> <LEADER>g :TestVisit<CR>
+
+" Extended matching with "%"
 runtime! macros/matchit.vim
 
-" Semantically execute files
-nnoremap <leader>x :echo "Don't know how to execute ." . expand("%:e")<cr>
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
+" Run linters on save
 autocmd! BufWritePost * Neomake
 
-" set up undo file in home directory
+" Highlight the current line, only for the buffer with focus
+augroup CursorLine
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+
+" Automatically rebalance windows on Vim resize
+autocmd VimResized * :wincmd =
+
+" Set up undo file in home directory
 if isdirectory($HOME . '/.config/nvim/undo') == 0
   :silent !mkdir -p ~/.config/nvim/undo > /dev/null 2>&1
 endif
-set undofile
-set undodir=~/.config/nvim/undo/
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  let g:ctrlp_max_height = 25
-
-  " keeps working dir the same as when vim launched.
-  " changing dirs from underneath me is confusing as hell.
-  let g:ctrlp_working_path_mode = 0
-
-  " start searching from your project root instead of the cwd
-  let g:ag_working_path_mode="r"
-endif
-
-function! RunTerminalCommandInTab(command)
-  -tabnew
-  execute 'terminal' a:command
-endfunction
-
-augroup AutoSwap
-  autocmd!
-  autocmd SwapExists *  call AS_HandleSwapfile(expand('<afile>:p'), v:swapname)
-augroup END
-
-function! AS_HandleSwapfile (filename, swapname)
-  " if swapfile is older than file itself, just get rid of it
-  if getftime(v:swapname) < getftime(a:filename)
-    call delete(v:swapname)
-    let v:swapchoice = 'e'
-  endif
-endfunction
-autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
-      \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
+set undofile undodir=~/.config/nvim/undo/
 
 augroup checktime
-  au!
+  autocmd!
   if !has("gui_running")
-    "silent! necessary otherwise throws errors when using command
-    "line window.
     autocmd BufEnter,CursorHold,CursorHoldI,CursorMoved,CursorMovedI,FocusGained,BufEnter,FocusLost,WinLeave * checktime
   endif
 augroup END
 
-nnoremap <silent> <leader>t :TestNearest<CR>
-nnoremap <silent> <leader>T :TestFile<CR>
-nnoremap <silent> <leader>a :TestSuite<CR>
-nnoremap <silent> <leader>l :TestLast<CR>
-nnoremap <silent> <leader>g :TestVisit<CR>
+function! RunTerminalCommandInTab(command)
+  " Open a new tab to the left of the current one
+  -tabnew
+  " Execute command in the tab, so when it finishes we return to where we were
+  execute 'terminal' a:command
+endfunction
 
 function! NeovimTabStrategy(cmd)
   call RunTerminalCommandInTab(a:cmd)
@@ -163,6 +150,5 @@ endfunction
 let g:test#custom_strategies = {'neovim-tab': function('NeovimTabStrategy')}
 let g:test#strategy = 'neovim-tab'
 
-colorscheme default
-
+" Enable JSX syntax for .js files
 let g:jsx_ext_required = 0
