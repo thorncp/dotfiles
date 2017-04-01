@@ -1,6 +1,7 @@
-# fuzzy search code projects and cd to them
+#!/usr/bin/env bash
 
+# fuzzy search code projects and cd to them
 code() {
-  cd $(find ~/code -maxdepth 2 -type d | selecta)
+  cd "$(find ~/code -maxdepth 2 -type d | selecta)" || return
   clear
 }

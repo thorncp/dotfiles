@@ -1,5 +1,5 @@
-#!/bin/sh
-#
+#!/usr/bin/env bash
+
 # Attach or create tmux session named as the parent_directory/current_directory.
 
 not_in_tmux() {
