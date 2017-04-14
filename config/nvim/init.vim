@@ -25,7 +25,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/ctags.vim'
-Plug 'tvim-scripts/forth.vim'
 Plug 'vim-scripts/haskell.vim'
 Plug 'wting/rust.vim'
 
