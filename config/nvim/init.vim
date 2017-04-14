@@ -43,9 +43,6 @@ set hlsearch incsearch
 " capital letter, it becomes case sensitive
 set ignorecase smartcase
 
-" Look up usage of word under cursor with `:Ag!` instead of `man`
-set keywordprg=:Ag! "\b<C-R><C-W>\b"
-
 " Tabs and trailing whitespace are visible
 set list listchars=tab:»\ ,trail:·,nbsp:·
 
@@ -105,6 +102,9 @@ nnoremap <SILENT> <LEADER>T :TestFile<CR>
 nnoremap <SILENT> <LEADER>a :TestSuite<CR>
 nnoremap <SILENT> <LEADER>l :TestLast<CR>
 nnoremap <SILENT> <LEADER>g :TestVisit<CR>
+
+" Look up usage of word under cursor with `:Ag!` instead of `man`
+nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
 
 " Extended matching with "%"
 runtime! macros/matchit.vim
