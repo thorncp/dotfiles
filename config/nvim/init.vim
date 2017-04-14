@@ -97,11 +97,11 @@ nnoremap <CR> :nohlsearch<CR><CR>
 nnoremap <LEADER>x :echo "Don't know how to execute ." . expand("%:e")<CR>
 
 " Mappings for vim-test
-nnoremap <SILENT> <LEADER>t :TestNearest<CR>
-nnoremap <SILENT> <LEADER>T :TestFile<CR>
-nnoremap <SILENT> <LEADER>a :TestSuite<CR>
-nnoremap <SILENT> <LEADER>l :TestLast<CR>
-nnoremap <SILENT> <LEADER>g :TestVisit<CR>
+nnoremap <LEADER>t :TestNearest<CR>
+nnoremap <LEADER>T :TestFile<CR>
+nnoremap <LEADER>a :TestSuite<CR>
+nnoremap <LEADER>l :TestLast<CR>
+nnoremap <LEADER>g :TestVisit<CR>
 
 " Look up usage of word under cursor with `:Ag!` instead of `man`
 nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
