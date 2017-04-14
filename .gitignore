@@ -1,3 +1,4 @@
 config/nvim/plugged
 config/nvim/undo
 config/nvim/spell
+.netrwhist
