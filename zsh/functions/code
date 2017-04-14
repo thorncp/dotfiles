@@ -2,6 +2,6 @@
 
 # fuzzy search code projects and cd to them
 code() {
-  cd "$(find ~/code -maxdepth 2 -type d | selecta)" || return
+  cd "$(find ~/code -maxdepth 2 -type d | RBENV_VERSION=system selecta)" || return
   clear
 }
