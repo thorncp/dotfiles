@@ -6,5 +6,5 @@ function specdiff() {
   ${DIFF:-diff} -b -U 3 \
     <(git grep -w -h --no-line-number --no-color -e "$pattern" "${1:-master}" -- spec/) \
     <(git grep -w -h --no-line-number --no-color -e "$pattern" "${2:-HEAD}" -- spec/) |
-  less --RAW-CONTROL-CHARS --no-init --quit-if-one-screen
+  less
 }
