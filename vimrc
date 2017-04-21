@@ -1,3 +1,7 @@
+" Disable Vi compatibility. From the docs:
+" > you should probably put it at the very start.
+set nocompatible
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'cespare/vim-toml'
@@ -39,6 +43,9 @@ filetype plugin indent on
 " Use the default color scheme to avoid maintaining one
 colorscheme default
 
+" Automatically read files modified outside of Vim
+set autoread
+
 " Allow backspacing through indentation, eol, and through previous insertions
 set backspace=2
 
@@ -63,6 +70,9 @@ set nobackup nowritebackup
 
 " Remove delay when using <C-[>
 set noesckeys
+
+" http://www.techrepublic.com/blog/it-security/turn-off-modeline-support-in-vim/
+set nomodeline modelines=0
 
 " Don't keep a swap file. Previous file versions can be recovered from Git. If
 " the file isn't tracked by Git, it's either not important or I will be sad.
@@ -91,6 +101,11 @@ set splitbelow splitright
 
 " Make it obvious where 80 characters is
 set textwidth=80 colorcolumn=+1
+
+" Use 'very magic' regex searches by default. :help /magic
+cnoremap s/ s/\v
+nnoremap / /\v
+vnoremap / /\v
 
 " Quicker window movement
 nnoremap <C-J> <C-W>j
