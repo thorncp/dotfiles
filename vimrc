@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'benekastah/neomake'
 Plug 'cespare/vim-toml'
@@ -33,8 +33,14 @@ call plug#end()
 " Enable syntax highlighting
 syntax on
 
+" Detect file types
+filetype plugin indent on
+
 " Use the default color scheme to avoid maintaining one
 colorscheme default
+
+" Allow backspacing through indentation, eol, and through previous insertions
+set backspace=2
 
 " Highlight search results, while the pattern is being typed
 set hlsearch incsearch
@@ -42,6 +48,9 @@ set hlsearch incsearch
 " Searches are case insensitive by default. If the search pattern includes a
 " capital letter, it becomes case sensitive
 set ignorecase smartcase
+
+" Always show the status line
+set laststatus=2
 
 " Tabs and trailing whitespace are visible
 set list listchars=tab:»\ ,trail:·,nbsp:·
@@ -51,6 +60,9 @@ set mouse=
 
 " Don't make a file backup when overwriting a file
 set nobackup nowritebackup
+
+" Remove delay when using <C-[>
+set noesckeys
 
 " Don't keep a swap file. Previous file versions can be recovered from Git. If
 " the file isn't tracked by Git, it's either not important or I will be sad.
@@ -89,11 +101,11 @@ nnoremap <C-L> <C-W>l
 " Map ctrl+p to FZF because muscle memory is hard to break
 nnoremap <C-P> :FZF<CR>
 
-" Disable search highlight on return and behind perform default behavior
+" Disable search highlight on return and perform default behavior
 nnoremap <CR> :nohlsearch<CR><CR>
 
 " Set up semantic execution of files. Prints a message by default. File types
-" can set their commands in config/nvim/ftplugin/*.vim
+" can set their commands in vim/ftplugin/*.vim
 nnoremap <LEADER>x :echo "Don't know how to execute ." . expand("%:e")<CR>
 
 " Mappings for vim-test
@@ -109,9 +121,6 @@ nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
 " Extended matching with "%"
 runtime! macros/matchit.vim
 
-" Run linters on save
-autocmd! BufWritePost * Neomake
-
 " Highlight the current line, only for the buffer with focus
 augroup CursorLine
   autocmd!
@@ -123,10 +132,10 @@ augroup END
 autocmd VimResized * :wincmd =
 
 " Set up undo file in home directory
-if isdirectory($HOME . '/.config/nvim/undo') == 0
-  :silent !mkdir -p ~/.config/nvim/undo > /dev/null 2>&1
+if isdirectory($HOME . '/.vim/undo') == 0
+  :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
 endif
-set undofile undodir=~/.config/nvim/undo/
+set undofile undodir=~/.vim/undo/
 
 augroup checktime
   autocmd!
@@ -135,19 +144,20 @@ augroup checktime
   endif
 augroup END
 
-function! RunTerminalCommandInTab(command)
-  " Open a new tab to the left of the current one
-  -tabnew
-  " Execute command in the tab, so when it finishes we return to where we were
-  execute 'terminal' a:command
-endfunction
-
-function! NeovimTabStrategy(cmd)
-  call RunTerminalCommandInTab(a:cmd)
-endfunction
-
-let g:test#custom_strategies = {'neovim-tab': function('NeovimTabStrategy')}
-let g:test#strategy = 'neovim-tab'
-
 " Enable JSX syntax for .js files
 let g:jsx_ext_required = 0
+
+" When the type of shell script is /bin/sh, assume a POSIX-compatible shell for
+" syntax highlighting purposes.
+let g:is_posix = 1
+
+" Change cursor to vertical line in insert and replace modes
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif

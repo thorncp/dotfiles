@@ -2,3 +2,5 @@ config/nvim/plugged
 config/nvim/undo
 config/nvim/spell
 .netrwhist
+plug.vim.old
+vim/spell

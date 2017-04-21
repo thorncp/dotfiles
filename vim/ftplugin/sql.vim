@@ -8,5 +8,4 @@ let g:sql_type_default = 'pgsql'
 setlocal syntax=pgsql
 setlocal commentstring=--\ %s
 
-nnoremap <buffer> <leader>x
-      \ :call RunTerminalCommandInTab("rails db < " . expand("%"))<cr>
+nnoremap <buffer> <leader>x :!rails db < %<cr>
