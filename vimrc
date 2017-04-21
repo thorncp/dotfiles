@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'benekastah/neomake'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'elixir-lang/vim-elixir'
@@ -26,6 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/haskell.vim'
+Plug 'w0rp/ale'
 Plug 'wting/rust.vim'
 
 call plug#end()
