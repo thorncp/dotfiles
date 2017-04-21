@@ -42,6 +42,8 @@
   user = thorncp
 [grep]
   lineNumber = true
+[init]
+  templatedir = ~/.git_template
 [merge]
   ff = only
   tool = unityyamlmerge
@@ -52,8 +54,6 @@
 [user]
   name = Chris Thorn
   email = chris@thorn.co
-[init]
-  templatedir = ~/.git_template
 [mergetool "unityyamlmerge"]
   trustExitCode = false
   cmd = '/Applications/Unity/Unity.app/Contents/Tools/UnityYAMLMerge' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
