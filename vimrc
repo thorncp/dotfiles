@@ -103,11 +103,6 @@ set splitbelow splitright
 " Make it obvious where 80 characters is
 set textwidth=80 colorcolumn=+1
 
-" Use 'very magic' regex searches by default. :help /magic
-cnoremap s/ s/\v
-nnoremap / /\v
-vnoremap / /\v
-
 " Quicker window movement
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
