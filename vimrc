@@ -147,13 +147,6 @@ if isdirectory($HOME . '/.vim/undo') == 0
 endif
 set undofile undodir=~/.vim/undo/
 
-augroup checktime
-  autocmd!
-  if !has("gui_running")
-    autocmd BufEnter,CursorHold,CursorHoldI,CursorMoved,CursorMovedI,FocusGained,BufEnter,FocusLost,WinLeave * checktime
-  endif
-augroup END
-
 " Enable JSX syntax for .js files
 let g:jsx_ext_required = 0
 
