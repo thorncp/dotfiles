@@ -150,6 +150,9 @@ if isdirectory($HOME . '/.vim/undo') == 0
 endif
 set undofile undodir=~/.vim/undo/
 
+" Increase delay before ALE runs linters
+let g:ale_lint_delay = 500
+
 " Enable JSX syntax for .js files
 let g:jsx_ext_required = 0
 
@@ -167,3 +170,10 @@ else
   let &t_SR = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Don't style ALE markup. The async nature of ALE means sometimes it finishes
+" while a :! command is current executing, which turns the entire background
+" yellow. This doesn't actually solve the problem, but will leave the background
+" the default color
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
