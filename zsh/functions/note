@@ -2,6 +2,24 @@
 
 NOTES_DIR=${NOTES_DIR:-~/.notes}
 
+all-time() {
+  context="$1"
+  if [ -z "$context" ]; then
+    echo "context expected" >&2
+    return 1
+  fi
+
+  tempfile="$(mktemp -t note).md"
+
+  for file in $(ls "$NOTES_DIR/$context/"*.md); do
+    date=`basename ${file%.md}`
+    echo "# $date\n" >> "$tempfile"
+    cat "$file" >> "$tempfile"
+  done
+
+  less -ci "$tempfile"
+}
+
 new-note() {
   context="$1"
   if [ -z "$context" ]; then
@@ -92,6 +110,9 @@ edit() {
 
 note() {
   case "$1" in
+    ("all-time")
+      all-time "${@:2}"
+      ;;
     ("edit")
       edit "${@:2}"
       ;;
@@ -119,8 +140,9 @@ _note-context-completion() {
   reply=("${(ps:\n:)completions}")
 }
 
-compctl -k '(edit find last-week new this-week)' \
+compctl -k '(all-time edit find last-week new this-week)' \
   -x 'c[-1,find]' -k '()' \
+  - 'c[-1,all-time]' -K _note-context-completion \
   - 'c[-1,edit]' -K _note-context-completion \
   - 'c[-1,new]' -K _note-context-completion \
   - 'c[-1,last-week]' -K _note-context-completion \
