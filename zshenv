@@ -15,5 +15,3 @@ PATH=$PATH:$GOPATH/bin
 PATH=".git/safe/../../bin:$PATH"
 
 export -U PATH
-
-eval "$(rbenv init - zsh)"
