@@ -11,6 +11,7 @@ Plug 'exu/pgsql.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/vim-easy-align'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
@@ -104,6 +105,12 @@ set splitbelow splitright
 
 " Make it obvious where 80 characters is
 set textwidth=80 colorcolumn=+1
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Quicker window movement
 nnoremap <C-J> <C-W>j
