@@ -4,6 +4,7 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'ElmCast/elm-vim'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'elixir-lang/vim-elixir'
@@ -185,3 +186,5 @@ endif
 " the default color
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+
+let g:elm_format_autosave = 1
