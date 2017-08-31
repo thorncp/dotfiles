@@ -42,7 +42,7 @@ find-note() {
     return 1
   fi
 
-  note=$(ag --nogroup "$pattern" "$NOTES_DIR" | sed "s|$NOTES_DIR||" | selecta)
+  note=$(ag --nogroup "$pattern" "$NOTES_DIR" | sed "s|$NOTES_DIR||" | fzf)
   note_file=$(echo "$note" | cut -d : -f 1)
   note_file_number=$(echo "$note" | cut -d : -f 2)
   $EDITOR "+$note_file_number" "$NOTES_DIR/$note_file"

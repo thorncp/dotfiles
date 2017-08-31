@@ -2,7 +2,7 @@
 
 # Update the timestamp for a Rails migration file.
 touch-migration() {
-  file=$(find db/migrate/*.rb | selecta)
+  file=$(find db/migrate/*.rb | fzf)
   timestamp=$(date -u "+%Y%m%d%H%M%S")
   new_file=$(echo $file | sed -E "s/[0-9]{14}/$timestamp/")
   command="mv $file $new_file"
