@@ -43,10 +43,7 @@ PS1='${exit_color}%~%{$reset_color%}$(git_prompt_info)
 autoload -U select-word-style
 select-word-style bash
 
-eval "$(rbenv init - zsh)"
 
-# mkdir .git/safe in the root of repositories you trust
-PATH=".git/safe/../../bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

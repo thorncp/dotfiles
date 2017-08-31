@@ -11,4 +11,9 @@ export LESS="--RAW-CONTROL-CHARS --no-init --quit-if-one-screen"
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 PATH=$PATH:$GOPATH/bin
 
+eval "$(rbenv init - zsh)"
+
+# mkdir .git/safe in the root of repositories you trust
+PATH=".git/safe/../../bin:$PATH"
+
 export -U PATH
