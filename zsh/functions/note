@@ -18,6 +18,7 @@ all-time() {
   done
 
   less -ci "$tempfile"
+  rm "$tempfile"
 }
 
 new-note() {
@@ -33,6 +34,7 @@ new-note() {
   mkdir -p "$NOTES_DIR/$context"
   cat "$tempfile" >> "$NOTES_DIR/$context/$datestamp.md"
   echo >> "$NOTES_DIR/$context/$datestamp.md"
+  rm "$tempfile"
 }
 
 find-note() {
@@ -68,6 +70,7 @@ this-week() {
   done
 
   less -ci "$tempfile"
+  rm "$tempfile"
 }
 
 last-week() {
@@ -90,6 +93,7 @@ last-week() {
   done
 
   less -ci "$tempfile"
+  rm "$tempfile"
 }
 
 edit() {
