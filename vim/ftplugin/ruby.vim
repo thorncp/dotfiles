@@ -7,5 +7,3 @@ nnoremap <buffer> <leader>x :!clear; ruby %<cr>
 
 setlocal re=1
 
-" ruby path if you are using rbenv
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
