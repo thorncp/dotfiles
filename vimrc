@@ -159,9 +159,6 @@ if isdirectory($HOME . '/.vim/undo') == 0
 endif
 set undofile undodir=~/.vim/undo/
 
-" Increase delay before ALE runs linters
-let g:ale_lint_delay = 500
-
 " Enable JSX syntax for .js files
 let g:jsx_ext_required = 0
 
@@ -180,11 +177,29 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" Increase delay before ALE runs linters
+" let g:ale_lint_delay = 500
+
+" ALE linting events
+" set updatetime=1000
+" let g:ale_lint_on_text_changed = 0
+" autocmd CursorHold * call ale#Lint()
+" autocmd CursorHoldI * call ale#Lint()
+" autocmd InsertEnter * call ale#Lint()
+" autocmd InsertLeave * call ale#Lint()
+
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
+
 " Don't style ALE markup. The async nature of ALE means sometimes it finishes
 " while a :! command is current executing, which turns the entire background
 " yellow. This doesn't actually solve the problem, but will leave the background
 " the default color
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\}
 
 let g:elm_format_autosave = 1
