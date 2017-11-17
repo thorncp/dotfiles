@@ -43,8 +43,10 @@ PS1='${exit_color}%~%{$reset_color%}$(git_prompt_info)
 autoload -U select-word-style
 select-word-style bash
 
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -d "$HOME/.asdf" ]; then
+  . $HOME/.asdf/asdf.sh
+fi
 
 export PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
