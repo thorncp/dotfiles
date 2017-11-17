@@ -13,11 +13,11 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'fatih/vim-go'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'matze/vim-lilypond'
-Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nicholaides/words-to-avoid.vim'
@@ -139,8 +139,8 @@ nnoremap <LEADER>a :TestSuite<CR>
 nnoremap <LEADER>l :TestLast<CR>
 nnoremap <LEADER>g :TestVisit<CR>
 
-" Look up usage of word under cursor with `:Ack!` instead of `man`
-nnoremap K :Ack! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
+" Look up usage of word under cursor with `:Ag!` instead of `man`
+nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
 
 " Extended matching with "%"
 runtime! macros/matchit.vim
