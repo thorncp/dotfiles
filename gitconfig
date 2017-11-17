@@ -57,3 +57,5 @@
 [mergetool "unityyamlmerge"]
   trustExitCode = false
   cmd = '/Applications/Unity/Unity.app/Contents/Tools/UnityYAMLMerge' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
+[color "diff"]
+  meta = black bold
