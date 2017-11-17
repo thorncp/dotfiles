@@ -17,12 +17,12 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'matze/vim-lilypond'
+Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nicholaides/words-to-avoid.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'rking/ag.vim'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -138,8 +138,8 @@ nnoremap <LEADER>a :TestSuite<CR>
 nnoremap <LEADER>l :TestLast<CR>
 nnoremap <LEADER>g :TestVisit<CR>
 
-" Look up usage of word under cursor with `:Ag!` instead of `man`
-nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
+" Look up usage of word under cursor with `:Ack!` instead of `man`
+nnoremap K :Ack! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
 
 " Extended matching with "%"
 runtime! macros/matchit.vim
@@ -177,6 +177,9 @@ else
   let &t_SR = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Use ag with ack.vim
+let g:ackprg = 'ag --vimgrep'
 
 " Increase delay before ALE runs linters
 " let g:ale_lint_delay = 500
