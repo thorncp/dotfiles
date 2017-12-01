@@ -7,6 +7,10 @@ export GOPATH=$HOME/go
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export LESS="--RAW-CONTROL-CHARS --no-init --quit-if-one-screen"
 
+if [ -d "$HOME/.asdf" ]; then
+  . $HOME/.asdf/asdf.sh
+fi
+
 # ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 PATH=$PATH:$GOPATH/bin
@@ -15,7 +19,3 @@ PATH=$PATH:$GOPATH/bin
 PATH=".git/safe/../../bin:$PATH"
 
 export -U PATH
-
-if [ -d "$HOME/.asdf" ]; then
-  . $HOME/.asdf/asdf.sh
-fi
