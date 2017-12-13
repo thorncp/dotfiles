@@ -2,6 +2,9 @@
 " > you should probably put it at the very start.
 set nocompatible
 
+" Set this early so any bindings defined will use it
+let mapleader = " "
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'ElmCast/elm-vim'
