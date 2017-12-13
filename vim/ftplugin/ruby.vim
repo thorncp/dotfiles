@@ -13,3 +13,7 @@ let test#ruby#rspec#options = {
   \ 'nearest': '--format documentation',
   \ 'file':    '--format documentation',
 \}
+
+let g:splitjoin_ruby_curly_braces = 0
+let g:splitjoin_ruby_hanging_args = 0
+let g:splitjoin_ruby_trailing_comma = 1

@@ -7,6 +7,7 @@ let mapleader = " "
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
