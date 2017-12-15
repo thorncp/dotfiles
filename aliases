@@ -1,2 +1,3 @@
 alias ag="ag --pager less --color-line-number '1;34'"
 alias v="$VISUAL"
+alias g=git
