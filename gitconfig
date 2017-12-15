@@ -10,7 +10,6 @@
   conflicts = "!$EDITOR $(git diff --name-only --diff-filter=U)"
   d = diff
   dc = diff --cached
-  fixup = "!git commit --fixup $(git squash-target)"
   hound = "!git ci -m 'Hound'"
   l = "!git ll -12"
   la = "!git ll --all"
@@ -22,9 +21,6 @@
   rbc = rebase --continue
   s = status -sb
   sha = "!git rev-list --max-count 1 HEAD | tr -d '\n' | pbcopy"
-  squash = "!git ci --squash $(git squash-target)"
-  # first parent whose commit message does not contain squash! or fixup!
-  squash-target = "!git log --oneline | grep -v 'squash!\\|fixup!' | head -n 1 | awk '{ print $1 }'"
   ss = diff --shortstat
   todo = "!git grep TODO -- $(git diff --name-only ${1:-master}...HEAD)"
   wd = diff --word-diff
