@@ -143,8 +143,8 @@ nnoremap <LEADER>a :TestSuite<CR>
 nnoremap <LEADER>l :TestLast<CR>
 nnoremap <LEADER>g :TestVisit<CR>
 
-" Look up usage of word under cursor with `:Ag!` instead of `man`
-nnoremap K :Ag! "\b<C-R>=expand("<cword>")<CR>\b"<CR>
+" Quickly search for the word under the cursor
+nnoremap <LEADER>k :Ag <C-R><C-W><CR>
 
 " Extended matching with "%"
 runtime! macros/matchit.vim
