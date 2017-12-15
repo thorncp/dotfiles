@@ -58,6 +58,9 @@ colorscheme default
 " Automatically read files modified outside of Vim
 set autoread
 
+" Automatically save files before many actions
+set autowrite
+
 " Allow backspacing through indentation, eol, and through previous insertions
 set backspace=2
 
