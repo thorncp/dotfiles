@@ -2,6 +2,6 @@
 
 # fuzzy search code projects and cd to them
 code() {
-  cd "$(find ~/code -maxdepth 2 -type d | fzf)" || return
+  cd "$(find ~/code $GOPATH/src/github.com -maxdepth 2 -type d | fzf)" || return
   clear
 }
