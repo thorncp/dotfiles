@@ -33,6 +33,7 @@
   pager = diff-so-fancy | less --tabs=1,5 -R
 [diff]
   compactionHeuristic = true
+  colorMoved = zebra
 [fetch]
   prune = true
 [github]
