@@ -14,3 +14,4 @@ tmp/**/*
 *.beam
 .rubocop.yml
 .tool-versions
+.editorconfig
