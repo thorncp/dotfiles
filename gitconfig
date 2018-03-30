@@ -49,6 +49,8 @@
   default = current
 [rebase]
   autosquash = true
+[rerere]
+  enabled = true
 [user]
   name = Chris Thorn
   email = chris@thorn.co
