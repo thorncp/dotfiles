@@ -42,6 +42,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/haskell.vim'
+Plug 'vim-scripts/indentpython.vim'
 Plug 'w0rp/ale'
 Plug 'wting/rust.vim'
 
