@@ -213,7 +213,7 @@ highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
 let g:ale_linters = {
-\   'ruby': ['rubocop'],
+\   'ruby': ['ruby', 'rubocop'],
 \}
 
 let g:elm_format_autosave = 1
