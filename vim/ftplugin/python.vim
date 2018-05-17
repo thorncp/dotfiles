@@ -9,3 +9,5 @@ setlocal textwidth=79
 let test#python#djangotest#executable = 'pipenv run python manage.py test'
 
 let g:splitjoin_trailing_comma = 1
+
+setlocal formatoptions+=r
