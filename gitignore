@@ -16,3 +16,5 @@ tmp/**/*
 .tool-versions
 .editorconfig
 .dbname
+__pycache__
+.elasticbeanstalk
