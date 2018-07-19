@@ -6,7 +6,6 @@
   b = branch
   ci = commit -v
   co = checkout
-  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
   conflicts = "!$EDITOR $(git diff --name-only --diff-filter=U)"
   d = diff
   dc = diff --cached
