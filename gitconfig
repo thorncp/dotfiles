@@ -44,7 +44,6 @@
   templatedir = ~/.git_template
 [merge]
   ff = only
-  tool = unityyamlmerge
 [push]
   default = current
 [rebase]
