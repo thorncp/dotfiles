@@ -7,6 +7,8 @@ end
 set -x DIFF colordiff
 set -x EDITOR vim
 set -x FZF_DEFAULT_COMMAND 'ag -g ""'
+set -x HOMEBREW_NO_AUTO_UPDATE 1
+set -x HOMEBREW_UPGRADE_CLEANUP 1
 set -x LESS "--RAW-CONTROL-CHARS --no-init --quit-if-one-screen"
 set -x PIPENV_DONT_LOAD_ENV 1
 set -x SHELL (which fish)
