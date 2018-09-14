@@ -1,4 +1,4 @@
 function code
-  cd (find ~/code -maxdepth 2 -type d | fzf)
+  cd (find ~/code $GOPATH/src/github.com -maxdepth 2 -type d | fzf)
   and clear
 end
