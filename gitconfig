@@ -30,6 +30,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+  commentchar = ";"
   pager = diff-so-fancy | less --tabs=1,5 -R
 [diff]
   compactionHeuristic = true
