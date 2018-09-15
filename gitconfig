@@ -28,13 +28,13 @@
 [color]
   ui = auto
 [core]
-  excludesfile = ~/.gitignore
   autocrlf = input
   commentchar = ";"
+  excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=1,5 -R
 [diff]
-  compactionHeuristic = true
   colorMoved = zebra
+  compactionHeuristic = true
 [fetch]
   prune = true
 [github]
@@ -52,7 +52,7 @@
 [rerere]
   enabled = true
 [user]
-  name = Chris Thorn
   email = chris@thorn.co
+  name = Chris Thorn
 [color "diff"]
   meta = black bold
