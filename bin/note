@@ -1,0 +1,32 @@
+#!/usr/bin/ruby --disable-gems
+
+if ARGV.empty?
+  warn "command required"
+  exit 1
+end
+
+command = ARGV.shift
+
+if command != "new"
+  warn "only new command is supported"
+  exit 1
+end
+
+if ARGV.empty?
+  warn "tag required"
+  exit 1
+end
+
+tag = ARGV.shift
+
+require "date"
+require "fileutils"
+
+notes_dir = File.expand_path(ENV.fetch("NOTES_DIR", "~/.notes"))
+tag_dir = File.join(notes_dir, tag)
+timestamp = Date.today.strftime("%Y-%m-%d")
+note_path = File.join(tag_dir, "#{timestamp}.md")
+
+FileUtils.mkdir_p(tag_dir)
+
+exec ENV["EDITOR"], note_path
