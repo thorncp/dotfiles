@@ -1,4 +1,4 @@
-set nojoinspaces
+setlocal nojoinspaces
 setlocal textwidth=80
 setlocal spell
 
