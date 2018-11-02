@@ -7,5 +7,6 @@ let g:sql_type_default = 'pgsql'
 
 setlocal syntax=pgsql
 setlocal commentstring=--\ %s
+setlocal spellcapcheck=
 
 nnoremap <buffer> <leader>x :!clear; psql -d (cat .dbname) < '%'<cr>
