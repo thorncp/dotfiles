@@ -214,6 +214,8 @@ nnoremap [r :ALEPreviousWrap<CR>
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
 let g:ale_linters = {
 \   'ruby': ['ruby', 'rubocop'],
 \}
