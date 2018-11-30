@@ -7,7 +7,7 @@ end
 
 command = ARGV.shift
 
-if command != "new" && command != "tags"
+if command != "new" && command != "tags" && command != "last"
   warn "unrecognized command: #{command}"
   exit 1
 end
@@ -34,6 +34,21 @@ if command == "new"
   note_path = File.join(tag_dir, "#{timestamp}.md")
 
   FileUtils.mkdir_p(tag_dir)
+
+  exec ENV["EDITOR"], note_path
+end
+
+if command == "last"
+  if ARGV.empty?
+    warn "tag required"
+    exit 1
+  end
+
+  tag = ARGV.shift
+
+  tag_dir = File.join(notes_dir, tag)
+  last = Dir.entries(tag_dir).sort.last
+  note_path = File.join(tag_dir, last)
 
   exec ENV["EDITOR"], note_path
 end
