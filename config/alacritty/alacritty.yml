@@ -212,6 +212,6 @@ key_bindings:
   - { key: NumpadEnter,             chars: "\n"                          }
 
   # mine
-  - { key: B,        mods: Alt,     chars: "\x1b[1;3D"                   }
-  - { key: F,        mods: Alt,     chars: "\x1b[1;3C"                   }
+  - { key: B,        mods: Alt,     chars: "\x1bb"                       }
+  - { key: F,        mods: Alt,     chars: "\x1bf"                       }
   - { key: Key6,     mods: Control, chars: "\x1e"                        }
