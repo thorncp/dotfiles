@@ -2,6 +2,9 @@
 " > you should probably put it at the very start.
 set nocompatible
 
+" Don't highlight matching parenthesis
+let loaded_matchparen = 1
+
 " Set this early so any bindings defined will use it
 let mapleader = " "
 
