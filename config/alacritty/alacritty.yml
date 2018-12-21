@@ -9,6 +9,8 @@ window:
 
   decorations: buttonless
 
+  start_maximized: true
+
 scrolling:
   history: 10000
   multiplier: 3
