@@ -1,9 +1,5 @@
 set fish_greeting ""
 
-if test -d $HOME/.asdf
-  source $HOME/.asdf/asdf.fish
-end
-
 set -x DIFF colordiff
 set -x EDITOR vim
 set -x FZF_DEFAULT_COMMAND 'ag -g ""'
@@ -15,13 +11,19 @@ set -x PIPENV_DONT_LOAD_ENV 1
 set -x SHELL (which fish)
 set -x VISUAL vim
 
-if not set -q TMUX
-  set -x PATH $PATH $GOPATH/bin
-  set -x PATH $HOME/.bin $PATH
-  set -x PATH .git/safe/../../bin $PATH
+function addpaths
+  contains -- $argv $fish_user_paths
+    or set -U fish_user_paths $argv $fish_user_paths
 end
+
+addpaths $GOPATH/bin
+addpaths $HOME/.fzf/bin
+addpaths $HOME/.asdf/bin
+addpaths $HOME/.asdf/shims
+addpaths $HOME/.bin
+addpaths .git/safe/../../bin
 
 alias ag "ag --pager less --color-line-number '1;34'"
 alias g git
-alias pm "python manage.py"
+alias pm "pipenv run python manage.py"
 alias v $VISUAL
