@@ -23,7 +23,8 @@ addpaths $HOME/.asdf/shims
 addpaths $HOME/.bin
 addpaths .git/safe/../../bin
 
+abbr --add g git
+abbr --add v $VISUAL
+abbr --add pm "pipenv run python manage.py"
+
 alias ag "ag --pager less --color-line-number '1;34'"
-alias g git
-alias pm "pipenv run python manage.py"
-alias v $VISUAL
