@@ -11,8 +11,16 @@ function fish_prompt
   set_color brwhite
   printf " "(basename (pwd))" "
 
-  set_color --background normal
+  set_color --background white
   set_color $status_color
+  printf "\ue0b0 "
+
+  set_color --background white
+  set_color brwhite
+  printf '%s ' (git branch ^/dev/null | grep \* | sed 's/* //')
+
+  set_color --background normal
+  set_color white
   printf "\ue0b0 "
 
   set_color normal
