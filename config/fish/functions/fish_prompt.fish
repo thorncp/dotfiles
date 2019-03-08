@@ -9,7 +9,7 @@ function fish_prompt
 
   set_color --background $status_color
   set_color brwhite
-  printf " "(dirs)" "
+  printf " "(basename (pwd))" "
 
   set_color --background normal
   set_color $status_color
