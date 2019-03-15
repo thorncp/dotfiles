@@ -144,7 +144,11 @@ nnoremap <CR> :nohlsearch<CR><CR>
 
 " Set up semantic execution of files. Prints a message by default. File types
 " can set their commands in vim/ftplugin/*.vim
-nnoremap <LEADER>x :echo "Don't know how to execute ." . expand("%:e")<CR>
+nnoremap <LEADER>x :echo "Don't know how to execute " . &filetype . " files"<CR>
+
+" Set up semantic debugging. Inserts a line with the language's debugging
+" mechanism. File types can set their commands in vim/ftplugin/*.vim
+nnoremap <LEADER>d :echo "Don't know how to debug " . &filetype . " files"<CR>
 
 " Mappings for vim-test
 nnoremap <LEADER>t :TestNearest<CR>
