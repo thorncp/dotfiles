@@ -1,54 +1,76 @@
 #!/usr/bin/ruby --disable-gems
 
+autoload :Date, "date"
+autoload :FileUtils, "fileutils"
+
+class TagsCommand
+  def call(_args, config)
+    exec "ls", config.directory
+  end
+end
+
+class NewCommand
+  def call(args, config)
+    if args.empty?
+      warn "tag required"
+      exit 1
+    end
+
+    tag = args.shift
+
+    tag_dir = File.join(config.directory, tag)
+    timestamp = Date.today.strftime("%Y-%m-%d")
+    note_path = File.join(tag_dir, "#{timestamp}.md")
+
+    FileUtils.mkdir_p(tag_dir)
+
+    exec config.editor, note_path
+  end
+end
+
+class LastCommand
+  def call(args, config)
+    if args.empty?
+      warn "tag required"
+      exit 1
+    end
+
+    tag = args.shift
+
+    tag_dir = File.join(config.directory, tag)
+    last = Dir.entries(tag_dir).max
+    note_path = File.join(tag_dir, last)
+
+    exec config.editor, note_path
+  end
+end
+
+class MissingCommand
+  def call(*)
+    warn "Unrecognized command"
+    warn "Available commands: #{COMMANDS.keys.join(', ')}"
+    exit 1
+  end
+end
+
+COMMANDS = {
+  "last" => LastCommand,
+  "new" => NewCommand,
+  "tags" => TagsCommand,
+}.freeze
+
+Config = Struct.new(:directory, :editor)
+
+config = Config.new(
+  File.expand_path(ENV.fetch("NOTES_DIR", "~/.notes")),
+  ENV.fetch("EDITOR"),
+)
+
 if ARGV.empty?
   warn "command required"
   exit 1
 end
 
 command = ARGV.shift
-
-if command != "new" && command != "tags" && command != "last"
-  warn "unrecognized command: #{command}"
-  exit 1
-end
-
-notes_dir = File.expand_path(ENV.fetch("NOTES_DIR", "~/.notes"))
-
-if command == "tags"
-  exec "ls", notes_dir
-end
-
-if command == "new"
-  if ARGV.empty?
-    warn "tag required"
-    exit 1
-  end
-
-  tag = ARGV.shift
-
-  require "date"
-  require "fileutils"
-
-  tag_dir = File.join(notes_dir, tag)
-  timestamp = Date.today.strftime("%Y-%m-%d")
-  note_path = File.join(tag_dir, "#{timestamp}.md")
-
-  FileUtils.mkdir_p(tag_dir)
-
-  exec ENV["EDITOR"], note_path
-end
-
-if command == "last"
-  if ARGV.empty?
-    warn "tag required"
-    exit 1
-  end
-
-  tag = ARGV.shift
-
-  tag_dir = File.join(notes_dir, tag)
-  last = Dir.entries(tag_dir).sort.last
-  note_path = File.join(tag_dir, last)
-
-  exec ENV["EDITOR"], note_path
-end
+command_class = COMMANDS.fetch(command, MissingCommand)
+command_class.new.(ARGV.dup, config)
