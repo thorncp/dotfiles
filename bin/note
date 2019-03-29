@@ -45,6 +45,23 @@ class LastCommand
   end
 end
 
+class FindCommand
+  def call(args, config)
+    if args.empty?
+      warn "Need a search term"
+      exit 1
+    end
+
+    query = args.join(" ")
+    file_with_match = `ag '#{query}' #{config.directory} | fzf`.strip
+    matches = file_with_match.match(/\A(?<path>[^:]+):(?<line>\d+)/)
+
+    if matches
+      exec "kak #{matches[:path]} +#{matches[:line]}"
+    end
+  end
+end
+
 class MissingCommand
   def call(*)
     warn "Unrecognized command"
@@ -54,6 +71,7 @@ class MissingCommand
 end
 
 COMMANDS = {
+  "find" => FindCommand,
   "last" => LastCommand,
   "new" => NewCommand,
   "tags" => TagsCommand,
