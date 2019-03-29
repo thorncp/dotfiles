@@ -18,3 +18,4 @@ tmp/**/*
 .dbname
 __pycache__
 .elasticbeanstalk
+vimrc.local

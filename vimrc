@@ -228,3 +228,7 @@ let g:ale_linters = {
 \}
 
 let g:elm_format_autosave = 1
+
+if filereadable(".git/safe/../../vimrc.local")
+  source .git/safe/../../vimrc.local
+endif
