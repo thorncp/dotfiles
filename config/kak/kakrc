@@ -1,0 +1,12 @@
+hook global WinCreate .* %{
+    add-highlighter window/ number-lines -relative -hlcursor
+}
+
+hook global WinSetOption filetype=ruby %[
+    set-option buffer indentwidth 2
+    set-option buffer tabstop 2
+]
+
+define-command vs -params 1 -file-completion %[
+    new edit %arg[1]
+]
