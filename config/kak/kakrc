@@ -1,3 +1,5 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
 hook global WinCreate .* %{
     add-highlighter window/ number-lines -relative -hlcursor
 }
