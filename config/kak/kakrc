@@ -1,5 +1,9 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
+plug "andreyorst/fzf.kak"
+
+map global normal <c-p> ': fzf-mode<ret>'
+
 hook global WinCreate .* %{
     add-highlighter window/ number-lines -relative -hlcursor
 }
