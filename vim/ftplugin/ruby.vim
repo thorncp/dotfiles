@@ -1,7 +1,8 @@
-setlocal textwidth=80
 setlocal expandtab
 setlocal shiftwidth=2
+setlocal spellcapcheck=
 setlocal tabstop=2
+setlocal textwidth=80
 
 nnoremap <buffer> <leader>d Obinding.pry<esc>
 nnoremap <buffer> <leader>x :!clear; ruby '%'<cr>
