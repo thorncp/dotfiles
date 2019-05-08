@@ -11,6 +11,7 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'joker1007/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'christoomey/vim-tmux-navigator'
