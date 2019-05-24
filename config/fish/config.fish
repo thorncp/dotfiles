@@ -18,11 +18,12 @@ function addpaths
 end
 
 addpaths $GOPATH/bin
-addpaths $HOME/.fzf/bin
 addpaths $HOME/.asdf/bin
 addpaths $HOME/.asdf/shims
 addpaths $HOME/.bin
+addpaths $HOME/.fzf/bin
 addpaths .git/safe/../../bin
+addpaths /usr/local/sbin
 
 abbr --add g git
 abbr --add v $VISUAL
