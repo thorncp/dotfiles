@@ -57,7 +57,7 @@ class FindCommand
     matches = file_with_match.match(/\A(?<path>[^:]+):(?<line>\d+)/)
 
     if matches
-      exec "kak #{matches[:path]} +#{matches[:line]}"
+      exec "#{config.editor} #{matches[:path]} +#{matches[:line]}"
     end
   end
 end
