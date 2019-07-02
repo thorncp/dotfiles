@@ -11,7 +11,6 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'joker1007/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'christoomey/vim-tmux-navigator'
@@ -27,13 +26,11 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'matze/vim-lilypond', { 'fof': 'lilypond' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'nicholaides/words-to-avoid.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
