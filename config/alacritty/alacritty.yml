@@ -9,7 +9,7 @@ window:
 
   decorations: buttonless
 
-  start_maximized: true
+  startup_mode: Maximized
 
 scrolling:
   history: 10000
@@ -44,7 +44,8 @@ font:
 
   use_thin_strokes: true
 
-render_timer: false
+debug:
+  render_timer: false
 
 draw_bold_text_with_bright_colors: true
 
