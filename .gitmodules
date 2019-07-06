@@ -1,3 +1,0 @@
-[submodule "config/kak/plugins/plug.kak"]
-	path = config/kak/plugins/plug.kak
-	url = git@github.com:andreyorst/plug.kak.git
