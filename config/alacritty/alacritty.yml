@@ -21,15 +21,15 @@ tabspaces: 8
 
 font:
   normal:
-    family: Source Code Pro
+    family: Source Code Variable
     style: Regular
 
   bold:
-    family: Source Code Pro
+    family: Source Code Variable
     style: Bold
 
   italic:
-    family: Source Code Pro
+    family: Source Code Variable
     style: Italic
 
   size: 20.0
