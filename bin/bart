@@ -1,0 +1,46 @@
+#!/usr/bin/ruby --disable-gems
+
+require "json"
+require "net/http"
+require "yaml"
+
+config = YAML.safe_load(
+  File.read(File.expand_path("~/.bart")),
+)
+KEY = config.fetch("api_key")
+BASE_URL = "http://api.bart.gov/api"
+
+advisories_url = URI.parse(
+  "#{BASE_URL}/bsa.aspx?key=#{KEY}&json=y&cmd=bsa",
+)
+
+advisories = JSON.parse(Net::HTTP.get(advisories_url))
+
+advisories.dig("root", "bsa").each do |advisory|
+  puts advisory.dig("description", "#cdata-section")
+end
+
+STATION = config.fetch("station")
+DESTINATIONS = config.fetch("destinations")
+
+estimates_uri = URI.parse(
+  "#{BASE_URL}/etd.aspx?key=#{KEY}&orig=#{STATION}&json=y&cmd=etd",
+)
+
+estimates = JSON.parse(Net::HTTP.get(estimates_uri))
+
+all_destinations = estimates.dig("root", "station").first["etd"]
+
+DESTINATIONS.each do |desired_destination|
+  match = all_destinations.detect { |destination|
+    destination.fetch("abbreviation") == desired_destination
+  }
+
+  if match
+    puts "\n#{match.fetch("destination")}:"
+
+    match.fetch("estimate").each do |estimate|
+      puts "\t#{estimate.fetch("minutes")} mins (#{estimate.fetch("length")} car)"
+    end
+  end
+end
