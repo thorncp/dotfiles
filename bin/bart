@@ -31,16 +31,27 @@ estimates = JSON.parse(Net::HTTP.get(estimates_uri))
 
 all_destinations = estimates.dig("root", "station").first["etd"]
 
+trains = []
+
 DESTINATIONS.each do |desired_destination|
   match = all_destinations.detect { |destination|
     destination.fetch("abbreviation") == desired_destination
   }
 
   if match
-    puts "\n#{match.fetch("destination")}:"
 
     match.fetch("estimate").each do |estimate|
-      puts "\t#{estimate.fetch("minutes")} mins (#{estimate.fetch("length")} car)"
+      trains << estimate.merge("destination" => match.fetch("destination"))
     end
   end
+end
+
+puts
+
+trains.sort_by { |t| t["minutes"].to_i }.each do |train|
+  puts [
+    "#{train.fetch("minutes")} mins",
+    train.fetch("destination"),
+    "(#{train.fetch("length")} car)"
+  ].join(" ")
 end
