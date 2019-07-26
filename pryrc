@@ -4,3 +4,9 @@ if defined?(PryByebug)
   Pry.commands.alias_command "n", "next"
   Pry.commands.alias_command "f", "finish"
 end
+
+class Object
+  def _methods
+    self.methods.sort - Object.methods
+  end
+end
