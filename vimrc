@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
