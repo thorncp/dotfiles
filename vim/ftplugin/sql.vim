@@ -18,4 +18,8 @@ setlocal syntax=pgsql
 setlocal commentstring=--\ %s
 setlocal spellcapcheck=
 
-nnoremap <buffer> <leader>x :!clear; psql -d (cat .dbname) < '%'<cr>
+if filereadable(".git/safe/../../.dbname")
+  nnoremap <buffer> <leader>x :!clear; psql -d (cat .dbname) < '%'<cr>
+else
+  nnoremap <buffer> <leader>x :echo "Can't find .git/safe/../../.dbname"<cr>
+endif
