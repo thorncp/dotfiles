@@ -14,11 +14,9 @@ advisories_url = URI.parse(
   "#{BASE_URL}/bsa.aspx?key=#{KEY}&json=y&cmd=bsa",
 )
 
-advisories = JSON.parse(Net::HTTP.get(advisories_url))
-
-advisories.dig("root", "bsa").each do |advisory|
-  puts advisory.dig("description", "#cdata-section")
-end
+advisories = Thread.new {
+  JSON.parse(Net::HTTP.get(advisories_url))
+}
 
 STATION = config.fetch("station")
 DESTINATIONS = config.fetch("destinations")
@@ -27,9 +25,16 @@ estimates_uri = URI.parse(
   "#{BASE_URL}/etd.aspx?key=#{KEY}&orig=#{STATION}&json=y&cmd=etd",
 )
 
-estimates = JSON.parse(Net::HTTP.get(estimates_uri))
+estimates = Thread.new {
+  JSON.parse(Net::HTTP.get(estimates_uri))
+}
 
-all_destinations = estimates.dig("root", "station").first["etd"]
+advisories.value.dig("root", "bsa").each do |advisory|
+  puts advisory.dig("description", "#cdata-section")
+end
+
+
+all_destinations = estimates.value.dig("root", "station").first["etd"]
 
 trains = []
 
