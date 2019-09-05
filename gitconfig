@@ -5,9 +5,9 @@
   au = add -u
   b = branch
   bd- = branch -D @{-1}
-  cb = "!git checkout $(git branch -a | ag -v '^\\*' | ag -v 'HEAD' | fzf | sed -E 's/[^\\/]+\\/[^\\/]+\\///')"
+  cb = "!git switch $(git branch -a | ag -v '^\\*' | ag -v 'HEAD' | fzf | sed -E 's/[^\\/]+\\/[^\\/]+\\///')"
   ci = commit -v
-  co = checkout
+  co = "!echo 'Use `git switch` or `git restore`'"
   conflicts = "!$EDITOR $(git diff --name-only --diff-filter=U)"
   d = diff
   dc = diff --cached
@@ -15,7 +15,7 @@
   la = "ll --all"
   ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
   lt = "ll --simplify-by-decoration"
-  m = "!git co ${1:-master} && git merge - && git b -d @{-1}"
+  m = "!git switch ${1:-master} && git merge - && git b -d @{-1}"
   p = push -u
   pf = push --force-with-lease
   rba = rebase --abort
@@ -23,6 +23,7 @@
   s = status -sb
   sha = "!git rev-list --max-count 1 HEAD | tr -d '\n' | pbcopy"
   ss = diff --shortstat
+  sw = switch
   todo = "!git grep TODO -- $(git diff --name-only ${1:-master}...HEAD)"
   wd = diff --word-diff
   wip = "!f() { git ci -m \"WIP $*\"; }; f"
