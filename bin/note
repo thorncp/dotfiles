@@ -9,6 +9,12 @@ class TagsCommand
   end
 end
 
+class CommandsCommand
+  def call(_args, _config)
+    puts COMMANDS.keys
+  end
+end
+
 class NewCommand
   def call(args, config)
     if args.empty?
@@ -71,6 +77,7 @@ class MissingCommand
 end
 
 COMMANDS = {
+  "commands" => CommandsCommand,
   "find" => FindCommand,
   "last" => LastCommand,
   "new" => NewCommand,
