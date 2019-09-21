@@ -1,6 +1,7 @@
 set fish_greeting ""
 set fish_features qmark-noglob
 
+set -x BAT_THEME ansi-light
 set -x DIFF colordiff
 set -x EDITOR vim
 set -x FZF_DEFAULT_COMMAND 'ag -g ""'
