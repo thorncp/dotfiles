@@ -7,7 +7,6 @@
   bd- = branch -D @{-1}
   cb = "!git switch $(git branch -a | ag -v '^\\*' | ag -v 'HEAD' | fzf | sed -E 's/[^\\/]+\\/[^\\/]+\\///')"
   ci = commit -v
-  co = "!echo 'Use `git switch` or `git restore`'"
   conflicts = "!$EDITOR $(git diff --name-only --diff-filter=U)"
   d = diff
   dc = diff --cached
