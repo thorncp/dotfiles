@@ -114,12 +114,6 @@ set splitbelow splitright
 " Make it obvious where 80 characters is
 set textwidth=80 colorcolumn=+1
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
 " Quicker window movement
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
