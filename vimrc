@@ -11,6 +11,7 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -37,7 +38,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'w0rp/ale'
 

@@ -5,6 +5,7 @@ db/*.sqlite3
 log/*.log
 rerun.txt
 tags
+tags.lock
 !tags/
 tmp/**/*
 !tmp/cache/.keep
