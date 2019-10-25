@@ -30,7 +30,15 @@ estimates = Thread.new {
 }
 
 advisories.value.dig("root", "bsa").each do |advisory|
-  puts advisory.dig("description", "#cdata-section")
+  color = if advisory["type"] == "DELAY"
+            "\e[31m"
+          else
+            "\e[32m"
+          end
+
+  message = advisory.dig("description", "#cdata-section")
+
+  puts "#{color}#{message}\e[0m"
 end
 
 
