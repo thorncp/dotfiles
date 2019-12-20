@@ -1,0 +1,18 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+plug "andreyorst/fzf.kak"
+
+map global normal <c-p> ': fzf-mode<ret>'
+
+hook global WinCreate .* %{
+    add-highlighter window/ number-lines -relative -hlcursor
+}
+
+hook global WinSetOption filetype=ruby %[
+    set-option buffer indentwidth 2
+    set-option buffer tabstop 2
+]
+
+define-command vs -params 1 -file-completion %[
+    new edit %arg[1]
+]
