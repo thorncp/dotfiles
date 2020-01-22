@@ -23,7 +23,7 @@
   sha = "!git rev-list --max-count 1 HEAD | tr -d '\n' | pbcopy"
   ss = diff --shortstat
   sw = switch
-  todo = "!git grep TODO -- $(git diff --name-only ${1:-master}...HEAD)"
+  todo = "!git grep TODO -- $(git diff --name-only ${1:-origin/master}...HEAD)"
   wd = diff --word-diff
   wip = "!f() { git ci -m \"WIP $*\"; }; f"
 [color]
