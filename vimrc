@@ -32,6 +32,7 @@ Plug 'nicholaides/words-to-avoid.vim'
 Plug 'othree/html5.vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
