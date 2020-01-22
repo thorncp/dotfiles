@@ -105,9 +105,6 @@ set ruler
 " Think of it like context in Grep or Ag.
 set scrolloff=2
 
-" Enable spell checking
-set spell
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow splitright
 
