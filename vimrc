@@ -24,7 +24,7 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'matze/vim-lilypond', { 'fof': 'lilypond' }
+Plug 'matze/vim-lilypond', { 'for': 'lilypond' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'nicholaides/words-to-avoid.vim'
