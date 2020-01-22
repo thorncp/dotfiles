@@ -15,6 +15,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'exu/pgsql.vim', { 'for': 'sql' }
@@ -39,7 +40,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-Plug 'w0rp/ale'
 
 call plug#end()
 
