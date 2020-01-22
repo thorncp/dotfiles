@@ -11,7 +11,6 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -25,6 +24,7 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'matze/vim-lilypond', { 'for': 'lilypond' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
