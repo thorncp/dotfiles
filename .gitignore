@@ -16,6 +16,7 @@
 .config/fish/functions/fzf_key_bindings.fish
 .config/hub
 .dbname
+.dropbox/
 .editorconfig
 .elasticbeanstalk
 .env.local
@@ -23,8 +24,12 @@
 .foreman
 .fzf/
 .gem/
+.gnupg/
 .lesshst
 .local/
+.netrc
+.node-gyp/
+.psql_history
 .rubocop.yml
 .ssh/
 .tool-versions
@@ -32,10 +37,13 @@
 .vim/plugged/
 .vim/undo/
 .viminfo
+.webdrivers/
+.yarnrc
 .zsh_history
 Desktop/
 Documents/
 Downloads/
+Dropbox/
 Library/
 Movies/
 Music/
@@ -48,5 +56,6 @@ log/*.log
 rerun.txt
 tags
 tags.lock
+tags.temp
 tmp/**/*
 vimrc.local
