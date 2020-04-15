@@ -42,8 +42,6 @@
   user = thorncp
 [grep]
   lineNumber = true
-[init]
-  templatedir = ~/.git_template
 [merge]
   ff = only
 [push]
