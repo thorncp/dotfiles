@@ -25,10 +25,13 @@
 .fzf/
 .gem/
 .gnupg/
+.irbhistory
 .lesshst
 .local/
 .netrc
 .node-gyp/
+.npm/
+.plotly/
 .psql_history
 .rubocop.yml
 .ssh/
