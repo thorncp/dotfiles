@@ -11,7 +11,6 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'dense-analysis/ale'
@@ -197,8 +196,6 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
 \   'ruby': ['ruby', 'rubocop'],
 \}
-
-let g:elm_format_autosave = 1
 
 if filereadable(".git/safe/../../vimrc.local")
   source .git/safe/../../vimrc.local
