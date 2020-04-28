@@ -193,6 +193,13 @@ highlight clear ALEWarningSign
 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
+" Rebuild spell file when entries are added externally
+for d in glob('~/.vim/spell/*.add', 1, 1)
+  if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+    silent exec 'mkspell! ' . fnameescape(d)
+  endif
+endfor
+
 if filereadable(".git/safe/../../.vimrc")
   source .git/safe/../../.vimrc
 endif
