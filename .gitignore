@@ -11,6 +11,7 @@
 .bundle
 .byebug_history
 .cache/
+.config/configstore/
 .config/fish/fish_variables
 .config/fish/functions/fish_user_key_bindings.fish
 .config/fish/functions/fzf_key_bindings.fish
@@ -25,6 +26,7 @@
 .fzf/
 .gem/
 .gnupg/
+.irb_history
 .irbhistory
 .lesshst
 .local/
