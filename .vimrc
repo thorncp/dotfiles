@@ -193,10 +193,6 @@ highlight clear ALEWarningSign
 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-let g:ale_linters = {
-\   'ruby': ['ruby', 'rubocop'],
-\}
-
 if filereadable(".git/safe/../../vimrc.local")
   source .git/safe/../../vimrc.local
 endif
