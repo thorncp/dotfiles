@@ -53,5 +53,10 @@
 [user]
   email = chris@thorn.co
   name = Chris Thorn
+  signingkey = 54700D0303A26279
 [color "diff"]
   meta = black bold
+[commit]
+  gpgsign = true
+[gpg]
+  program = gpg
