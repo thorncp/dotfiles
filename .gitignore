@@ -40,6 +40,7 @@
 .vim/plugged/
 .vim/undo/
 .viminfo
+.vimrc
 .webdrivers/
 .yarnrc
 .zsh_history
@@ -63,4 +64,3 @@ tags.lock
 tags.temp
 tmp.*
 tmp/**/*
-vimrc.local

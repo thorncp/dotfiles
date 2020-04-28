@@ -193,6 +193,6 @@ highlight clear ALEWarningSign
 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-if filereadable(".git/safe/../../vimrc.local")
-  source .git/safe/../../vimrc.local
+if filereadable(".git/safe/../../.vimrc")
+  source .git/safe/../../.vimrc
 endif
