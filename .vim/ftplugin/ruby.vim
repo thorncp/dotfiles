@@ -4,7 +4,13 @@ setlocal tabstop=2
 setlocal textwidth=80
 
 nnoremap <buffer> <leader>d Obinding.pry<esc>
-nnoremap <buffer> <leader>x :!clear; ruby '%'<cr>
+
+" Opt-in to using rails runner, which often has spring setup, for faster runs
+if getline(1) == "# rails runner"
+  nnoremap <buffer> <leader>x :!clear; rails runner '%'<cr>
+else
+  nnoremap <buffer> <leader>x :!clear; ruby '%'<cr>
+endif
 
 setlocal re=1
 
