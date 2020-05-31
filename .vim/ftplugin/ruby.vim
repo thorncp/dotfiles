@@ -5,12 +5,16 @@ setlocal textwidth=80
 
 nnoremap <buffer> <leader>d Obinding.pry<esc>
 
-" Opt-in to using rails runner, which often has spring setup, for faster runs
-if getline(1) == "# rails runner"
-  nnoremap <buffer> <leader>x :!clear; rails runner '%'<cr>
-else
-  nnoremap <buffer> <leader>x :!clear; ruby '%'<cr>
-endif
+function! ExecRuby(path)
+  " Opt-in to using rails runner, which often has spring setup, for faster runs
+  if getline(1) == "# rails runner"
+    exec ":!clear; rails runner " . a:path
+  else
+    exec ":!clear; ruby " . a:path
+  endif
+endfunction
+
+nnoremap <buffer> <leader>x :call ExecRuby('%')<cr>
 
 setlocal re=1
 
