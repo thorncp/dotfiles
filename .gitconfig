@@ -53,7 +53,7 @@
 [user]
   email = chris@thorn.co
   name = Chris Thorn
-  signingkey = 54700D0303A26279
+  signingkey = B7FF281D5A092DFC
 [color "diff"]
   meta = black bold
 [commit]
