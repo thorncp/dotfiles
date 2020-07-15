@@ -68,6 +68,7 @@
 .vim/plugged/
 .vim/undo/
 .viminfo
+.vimrc.local
 .webdrivers/
 .wget-hsts
 .yarnrc
