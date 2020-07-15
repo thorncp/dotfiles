@@ -199,6 +199,6 @@ for d in glob('~/.vim/spell/*.add', 1, 1)
   endif
 endfor
 
-if filereadable(".git/safe/../../.vimrc")
-  source .git/safe/../../.vimrc
+if filereadable(".git/safe/../../.vimrc.local")
+  source .git/safe/../../.vimrc.local
 endif
