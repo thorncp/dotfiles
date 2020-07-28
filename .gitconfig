@@ -50,6 +50,8 @@
   program = gpg
 [grep]
   lineNumber = true
+[init]
+  defaultBranch = main
 [merge]
   ff = only
 [pull]
