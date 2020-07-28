@@ -30,6 +30,10 @@
   wip = "!f() { git ci -m \"WIP $*\"; }; f"
 [color]
   ui = auto
+[color "diff"]
+  meta = black bold
+[commit]
+  gpgsign = true
 [core]
   autocrlf = input
   commentchar = ";"
@@ -42,10 +46,14 @@
   prune = true
 [github]
   user = thorncp
+[gpg]
+  program = gpg
 [grep]
   lineNumber = true
 [merge]
   ff = only
+[pull]
+  rebase = true
 [push]
   default = current
 [rebase]
@@ -56,11 +64,3 @@
   email = chris@thorn.co
   name = Chris Thorn
   signingkey = B7FF281D5A092DFC
-[color "diff"]
-  meta = black bold
-[commit]
-  gpgsign = true
-[gpg]
-  program = gpg
-[pull]
-  rebase = true
