@@ -4,12 +4,14 @@ D3
 ERB
 FZF
 Mattermark
+Mattermark's
 Memoize
 Memoizing
 REPL
 REPLs
 RabbitMQ
 React's
+S3
 StimulusJS
 Vimscript
 config
@@ -24,9 +26,11 @@ lifecycle
 monorepo
 params
 postgresql
+rebase
 sql
 stackprof
 subquery
 thoughtbot
 tmp
+upsert
 webpacker
