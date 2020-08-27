@@ -9,7 +9,7 @@ let b:ale_fixers = {
 \   'sql': ['pgformatter'],
 \}
 
-let b:ale_sql_pgformatter_options = '--function-case 1 --keyword-case 1 --spaces 2'
+let b:ale_sql_pgformatter_options = '--function-case 1 --keyword-case 2 --spaces 2'
 
 let b:ale_fix_on_save = 1
 
