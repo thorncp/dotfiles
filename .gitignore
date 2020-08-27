@@ -14,6 +14,7 @@
 .bundle
 .byebug_history
 .cache/
+.config/BlueSherpa/
 .config/Zeal/
 .config/configstore/
 .config/dconf/
@@ -43,6 +44,7 @@
 .erlang.cookie
 .foreman
 .fzf.bash
+.fzf.zsh
 .fzf/
 .gem/
 .gnome/
@@ -61,6 +63,7 @@
 .profile
 .psql_history
 .rubocop.yml
+.sentryclirc
 .ssh/
 .sudo_as_admin_successful
 .tool-versions
@@ -73,6 +76,7 @@
 .wget-hsts
 .yarnrc
 .zsh_history
+.zshrc
 Applications/
 Desktop/
 Documents/
