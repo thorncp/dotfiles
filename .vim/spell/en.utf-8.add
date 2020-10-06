@@ -1,5 +1,7 @@
 ActiveRecord
 Basecamp
+Clearbit
+Crunchbase
 D3
 ERB
 FZF
@@ -7,6 +9,7 @@ Mattermark
 Mattermark's
 Memoize
 Memoizing
+NAICS
 REPL
 REPLs
 RabbitMQ
@@ -33,4 +36,5 @@ subquery
 thoughtbot
 tmp
 upsert
+url
 webpacker
