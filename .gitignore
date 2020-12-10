@@ -77,6 +77,9 @@
 .yarnrc
 .zsh_history
 .zshrc
+/tags
+/tags.lock
+/tags.temp
 Applications/
 Desktop/
 Documents/
@@ -98,8 +101,5 @@ go/
 log/*.log
 rerun.txt
 snap/
-tags
-tags.lock
-tags.temp
 tmp.*
 tmp/**/*
