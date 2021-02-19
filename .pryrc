@@ -6,7 +6,7 @@ if defined?(PryByebug)
 end
 
 class Object
-  def _methods
-    self.methods.sort - Object.methods
+  def _methods(pattern = /./)
+    (self.methods.sort - Object.methods).grep(pattern)
   end
 end
