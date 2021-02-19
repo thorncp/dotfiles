@@ -11,6 +11,7 @@
 .bash_history
 .bash_logout
 .bashrc
+.bin/ngrok
 .bundle
 .byebug_history
 .cache/
@@ -55,14 +56,17 @@
 .local/
 .mozilla/
 .netrc
+.ngrok2/
 .node-gyp/
 .node_repl_history
+.notes/
 .npm/
 .pki/
 .plotly/
 .profile
 .psql_history
 .rubocop.yml
+.sem.yaml
 .sentryclirc
 .ssh/
 .sudo_as_admin_successful
