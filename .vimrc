@@ -192,7 +192,7 @@ nnoremap [r :ALEPreviousWrap<CR>
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = '[%linter%] %s - %...code...% [%severity%]'
 
 " Rebuild spell file when entries are added externally
 for d in glob('~/.vim/spell/*.add', 1, 1)
