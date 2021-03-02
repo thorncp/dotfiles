@@ -81,6 +81,7 @@
 .yarnrc
 .zsh_history
 .zshrc
+/cache
 /tags
 /tags.lock
 /tags.temp
@@ -97,7 +98,6 @@ Public/.localized
 Public/Drop\ Box
 __pycache__
 aws/
-cache/
 code/
 db/*.sqlite3
 en.utf-8.add.spl
