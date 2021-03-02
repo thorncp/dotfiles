@@ -68,6 +68,7 @@
 .rubocop.yml
 .sem.yaml
 .sentryclirc
+.solargraph
 .ssh/
 .sudo_as_admin_successful
 .tool-versions
