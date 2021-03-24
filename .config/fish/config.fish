@@ -14,13 +14,18 @@ set -x PIPENV_DONT_LOAD_ENV 1
 set -x SHELL (which fish)
 set -x VISUAL vim
 
-fish_add_path $GOPATH/bin
-fish_add_path $HOME/.asdf/bin
-fish_add_path $HOME/.asdf/shims
-fish_add_path $HOME/.bin
-fish_add_path $HOME/.fzf/bin
-fish_add_path .git/safe/../../bin
-fish_add_path /usr/local/sbin
+function addpaths
+  contains -- $argv $fish_user_paths
+    or set -U fish_user_paths $argv $fish_user_paths
+end
+
+addpaths $GOPATH/bin
+addpaths $HOME/.asdf/bin
+addpaths $HOME/.asdf/shims
+addpaths $HOME/.bin
+addpaths $HOME/.fzf/bin
+addpaths .git/safe/../../bin
+addpaths /usr/local/sbin
 
 abbr --add g git
 abbr --add v $VISUAL
