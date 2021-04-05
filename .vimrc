@@ -111,6 +111,7 @@ set splitbelow splitright
 
 " Make it obvious where 80 characters is
 set textwidth=80 colorcolumn=+1
+highlight ColorColumn term=bold ctermbg=black
 
 " Quicker window movement
 nnoremap <C-J> <C-W>j

@@ -38,7 +38,16 @@
   autocrlf = input
   commentchar = ";"
   excludesfile = ~/.gitignore
-  pager = delta --light
+  pager = delta
+[delta]
+  minus-style = brightred bold ul "#4E2020"
+  minus-emph-style = auto red
+  plus-style = brightgreen bold ul "#4D5124"
+  plus-emph-style = auto green
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 [diff]
   colorMoved = zebra
   compactionHeuristic = true
@@ -52,6 +61,8 @@
   lineNumber = true
 [init]
   defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
 [merge]
   ff = only
 [pull]
