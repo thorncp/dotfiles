@@ -44,6 +44,7 @@
   minus-emph-style = auto red
   plus-style = brightgreen bold ul "#4D5124"
   plus-emph-style = auto green
+  features = side-by-side line-numbers decorations
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
   file-style = bold yellow ul
