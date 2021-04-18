@@ -59,6 +59,8 @@ set autoread
 " Automatically save files before many actions
 set autowrite
 
+set background=dark
+
 " Allow backspacing through indentation, eol, and through previous insertions
 set backspace=2
 
@@ -192,6 +194,9 @@ nnoremap [r :ALEPreviousWrap<CR>
 " the default color
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+
+highlight SpellBad term=bold ctermbg=darkred
+highlight SpellCap term=bold ctermbg=darkblue
 
 let g:ale_echo_msg_format = '[%linter%] %s - %...code...% [%severity%]'
 

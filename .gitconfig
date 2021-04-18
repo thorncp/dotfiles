@@ -40,9 +40,9 @@
   excludesfile = ~/.gitignore
   pager = delta
 [delta]
-  minus-style = brightred bold ul "#4E2020"
-  minus-emph-style = auto red
-  plus-style = brightgreen bold ul "#4D5124"
+  minus-style = brightred bold ul normal
+  minus-emph-style = auto brightred
+  plus-style = brightgreen bold ul normal
   plus-emph-style = auto green
   features = side-by-side line-numbers decorations
 [delta "decorations"]
