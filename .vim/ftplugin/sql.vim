@@ -16,8 +16,14 @@ let b:ale_fix_on_save = 1
 setlocal syntax=pgsql
 setlocal commentstring=--\ %s
 
-if filereadable(".git/safe/../../.dbname")
-  nnoremap <buffer> <leader>x :!clear; psql -d (cat .dbname) < '%'<cr>
+if filereadable(".git/safe/../../.dblocal")
+  nnoremap <buffer> <leader>x :!clear; ./.dblocal < '%'<cr>
 else
-  nnoremap <buffer> <leader>x :echo "Can't find .git/safe/../../.dbname"<cr>
+  nnoremap <buffer> <leader>x :echo "Can't find .git/safe/../../.dblocal"<cr>
+endif
+
+if filereadable(".git/safe/../../.dbremote")
+  nnoremap <buffer> <leader>X :!clear; ./.dbremote < '%'<cr>
+else
+  nnoremap <buffer> <leader>X :echo "Can't find .git/safe/../../.dbremote"<cr>
 endif

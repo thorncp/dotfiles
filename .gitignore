@@ -37,7 +37,8 @@
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .cpan/
-.dbname
+.dblocal
+.dbremote
 .dropbox/
 .editorconfig
 .elasticbeanstalk
