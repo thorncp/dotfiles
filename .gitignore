@@ -37,8 +37,6 @@
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .cpan/
-.dblocal
-.dbremote
 .dropbox/
 .editorconfig
 .elasticbeanstalk
@@ -100,6 +98,8 @@ Public/.localized
 Public/Drop\ Box
 __pycache__
 aws/
+bin/db
+bin/dbr
 code/
 db/*.sqlite3
 en.utf-8.add.spl
