@@ -60,6 +60,8 @@
 .node_repl_history
 .notes/
 .npm/
+.pgadmin/
+.pgpass
 .pki/
 .plotly/
 .profile
