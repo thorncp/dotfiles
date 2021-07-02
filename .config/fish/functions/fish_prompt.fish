@@ -1,6 +1,6 @@
 function fish_prompt
   set prev_status $status
-  set git_branch (git branch ^/dev/null | grep \* | sed 's/* //')
+  set git_branch (git branch 2> /dev/null | grep \* | sed 's/* //')
 
   if test $prev_status -eq 0
     set status_color green
