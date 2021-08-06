@@ -66,6 +66,7 @@
 .plotly/
 .profile
 .psql_history
+.rediscli_history
 .rubocop.yml
 .sem.yaml
 .sentryclirc
