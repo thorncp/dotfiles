@@ -20,6 +20,7 @@ Honeybadger
 IDM
 IdentityMind
 Innotrust
+Jira
 KYC
 Koi
 LaunchDarkly
@@ -47,15 +48,18 @@ Socure's
 StimulusJS
 TODO
 Trulioo
+TypeError
 Unit21
 Unit21's
 Vimscript
 WIP
+Wireguard
 api
 arg
 auth
 aws
 backoff
+callout
 config
 cutover
 disbursable
@@ -102,3 +106,4 @@ v2
 vcr
 webhooks
 webpacker
+worfklow
