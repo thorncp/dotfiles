@@ -49,10 +49,12 @@
 .gem/
 .gnome/
 .gnupg/
+.hex/
 .irb_history
 .irbhistory
 .lesshst
 .local/
+.mix/
 .mozilla/
 .netrc
 .ngrok2/
