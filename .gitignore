@@ -17,6 +17,7 @@
 .cache/
 .config/BlueSherpa/
 .config/Zeal/
+.config/coc/
 .config/configstore/
 .config/dconf/
 .config/enchant/
@@ -73,6 +74,7 @@
 .sem.yaml
 .sentryclirc
 .solargraph
+.solargraph.yml
 .ssh/
 .sudo_as_admin_successful
 .tool-versions
