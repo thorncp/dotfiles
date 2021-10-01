@@ -18,6 +18,7 @@
 .config/BlueSherpa/
 .config/Zeal/
 .config/coc/
+.config/codeclimate/
 .config/configstore/
 .config/dconf/
 .config/enchant/
@@ -38,6 +39,7 @@
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .cpan/
+.docker/
 .dropbox/
 .editorconfig
 .elasticbeanstalk
