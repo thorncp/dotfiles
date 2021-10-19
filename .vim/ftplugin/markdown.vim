@@ -1,3 +1,4 @@
+setlocal autoindent
 setlocal nojoinspaces
 setlocal textwidth=80
 setlocal spell
