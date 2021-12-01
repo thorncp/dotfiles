@@ -60,6 +60,9 @@ set background=dark
 " Allow backspacing through indentation, eol, and through previous insertions
 set backspace=2
 
+" Make the + register map to the system clipboard
+set clipboard=unnamedplus
+
 " Highlight search results, while the pattern is being typed
 set hlsearch incsearch
 
