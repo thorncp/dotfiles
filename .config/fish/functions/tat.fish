@@ -8,7 +8,7 @@ function tat
     return 1
   end
 
-  set session_exists (tmux ls -F '#S' | grep "$session_name")
+  set session_exists (tmux has-session "$session_name" &> /dev/null)
 
   if test -n "$session_exists"
     tmux attach -t $session_name
