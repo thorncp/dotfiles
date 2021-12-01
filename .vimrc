@@ -61,7 +61,7 @@ set background=dark
 set backspace=2
 
 " Make the + register map to the system clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " Highlight search results, while the pattern is being typed
 set hlsearch incsearch
