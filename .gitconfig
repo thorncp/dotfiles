@@ -54,6 +54,7 @@
   compactionHeuristic = true
 [fetch]
   prune = true
+  pruneTags = true
 [github]
   user = thorncp
 [gpg]
