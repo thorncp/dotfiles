@@ -11,6 +11,7 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'aklt/plantuml-syntax'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'dense-analysis/ale'
