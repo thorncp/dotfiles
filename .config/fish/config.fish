@@ -1,5 +1,5 @@
 set fish_greeting ""
-set fish_features qmark-noglob
+set fish_features qmark-noglob,ampersand-nobg-in-token
 
 set -x DIFF colordiff
 set -x EDITOR (which vim)
