@@ -26,6 +26,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nicholaides/words-to-avoid.vim'
 Plug 'othree/html5.vim'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -104,6 +105,9 @@ set ruler
 " Start scrolling when the cursor is 2 lines from the bottom/top of screen.
 " Think of it like context in Grep or Ag.
 set scrolloff=2
+
+" When spell checking, support programming terms
+set spelllang=en,programming
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow splitright
