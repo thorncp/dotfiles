@@ -182,6 +182,9 @@ endif
 " Use ag with ack.vim
 let g:ackprg = 'ag --vimgrep'
 
+" Let CoC handle LSP things
+let g:ale_disable_lsp = 1
+
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 
