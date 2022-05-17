@@ -50,6 +50,7 @@
 .fzf.zsh
 .fzf/
 .gem/
+.gitconfig.local
 .gnome/
 .gnupg/
 .hex/

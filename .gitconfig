@@ -61,6 +61,8 @@
   program = gpg
 [grep]
   lineNumber = true
+[include]
+  path = ~/.gitconfig.local
 [init]
   defaultBranch = main
 [interactive]
@@ -78,4 +80,3 @@
 [user]
   email = chris@thorn.co
   name = Chris Thorn
-  signingkey = DA2600E2BE727874
