@@ -58,7 +58,7 @@ set autoread
 " Automatically save files before many actions
 set autowrite
 
-set background=dark
+set background=light
 
 " Allow backspacing through indentation, eol, and through previous insertions
 set backspace=2
@@ -115,7 +115,6 @@ set splitbelow splitright
 
 " Make it obvious where 80 characters is
 set textwidth=80 colorcolumn=+1
-highlight ColorColumn term=bold ctermbg=black
 
 " Quicker window movement
 nnoremap <C-J> <C-W>j

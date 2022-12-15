@@ -38,7 +38,7 @@
   autocrlf = input
   commentchar = ";"
   excludesfile = ~/.gitignore
-  pager = delta
+  pager = delta --light
 [delta]
   minus-style = brightred bold ul normal
   minus-emph-style = auto brightred
@@ -65,8 +65,6 @@
   path = ~/.gitconfig.local
 [init]
   defaultBranch = main
-[interactive]
-  diffFilter = delta --color-only
 [merge]
   ff = only
 [pull]
