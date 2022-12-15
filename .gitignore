@@ -28,6 +28,7 @@
 .config/fish/functions/fzf_key_bindings.fish
 .config/gedit/
 .config/gh/
+.config/github-copilot/hosts.json
 .config/gnome-initial-setup-done
 .config/google-chrome/
 .config/gtk-3.0/
