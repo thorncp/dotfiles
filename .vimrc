@@ -27,6 +27,7 @@ Plug 'nicholaides/words-to-avoid.vim'
 Plug 'othree/html5.vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
+Plug 'rhysd/conflict-marker.vim'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
