@@ -36,6 +36,7 @@
 .config/ibus/
 .config/menus/
 .config/nextjs-nodejs/
+.config/nvim/undo/
 .config/pulse/
 .config/user-dirs.dirs
 .config/user-dirs.locale

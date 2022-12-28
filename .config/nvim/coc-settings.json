@@ -1,0 +1,19 @@
+{
+  "diagnostic.displayByAle": true,
+  "suggest.floatConfig": {
+    "border": true,
+    "highlight": "black"
+  },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "highlight": "black"
+  },
+  "signature.floatConfig": {
+    "border": true,
+    "highlight": "black"
+  },
+  "hover.floatConfig": {
+    "border": true,
+    "highlight": "black"
+  }
+}
