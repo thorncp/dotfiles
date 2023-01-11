@@ -1,5 +1,5 @@
 set fish_greeting ""
-set fish_features qmark-noglob,ampersand-nobg-in-token
+set -U fish_features qmark-noglob,ampersand-nobg-in-token
 
 set -x BAT_THEME OneHalfLight
 set -x DIFF colordiff
