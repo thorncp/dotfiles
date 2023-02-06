@@ -26,6 +26,7 @@ addpaths $HOME/.bin
 addpaths $HOME/.fzf/bin
 addpaths .git/safe/../../bin
 addpaths /usr/local/sbin
+addpaths /opt/homebrew/bin
 
 abbr --add g git
 abbr --add v (basename $VISUAL)
