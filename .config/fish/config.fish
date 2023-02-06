@@ -7,6 +7,7 @@ set -x EDITOR (which vim)
 set -x FZF_DEFAULT_COMMAND 'ag --hidden -g ""'
 set -x FZF_DEFAULT_OPTS '--color light'
 set -x GOPATH $HOME/go
+set -x GPG_TTY (tty)
 set -x HOMEBREW_NO_ANALYTICS 1
 set -x HOMEBREW_NO_AUTO_UPDATE 1
 set -x LESS "--RAW-CONTROL-CHARS --no-init --quit-if-one-screen"
