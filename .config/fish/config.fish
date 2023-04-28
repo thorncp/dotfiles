@@ -31,6 +31,5 @@ addpaths /opt/homebrew/bin
 
 abbr --add g git
 abbr --add v (basename $VISUAL)
-abbr --add pm "pipenv run python manage.py"
 
 alias ag "ag --pager less --color-line-number '1;34'"
