@@ -93,21 +93,21 @@
 .yarnrc
 .zsh_history
 .zshrc
+/Applications/
+/Desktop/
+/Documents/
+/Downloads/
+/Dropbox/
+/Library/
+/Movies/
+/Music/
+/Pictures/
+/Public/.localized
+/Public/Drop\ Box
 /cache
 /tags
 /tags.lock
 /tags.temp
-Applications/
-Desktop/
-Documents/
-Downloads/
-Dropbox/
-Library/
-Movies/
-Music/
-Pictures/
-Public/.localized
-Public/Drop\ Box
 __pycache__
 aws/
 bin/db
