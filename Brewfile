@@ -1,0 +1,17 @@
+tap "homebrew/cask-fonts"
+
+brew "coreutils"
+brew "curl"
+brew "fish"
+brew "git-delta"
+brew "gnupg"
+brew "gpg2"
+brew "pgformatter"
+brew "pinentry-mac"
+brew "the_silver_searcher"
+brew "tmux"
+brew "tree"
+brew "vim"
+brew "watch"
+
+cask "font-source-code-pro"

@@ -108,6 +108,7 @@
 /tags
 /tags.lock
 /tags.temp
+Brewfile.lock.json
 __pycache__
 aws/
 bin/db
