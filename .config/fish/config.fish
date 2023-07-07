@@ -24,6 +24,7 @@ addpaths $GOPATH/bin
 addpaths $HOME/.asdf/bin
 addpaths $HOME/.asdf/shims
 addpaths $HOME/.bin
+addpaths $HOME/.bin.local
 addpaths $HOME/.fzf/bin
 addpaths .git/safe/../../bin
 addpaths /usr/local/sbin

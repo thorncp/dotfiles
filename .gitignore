@@ -11,6 +11,7 @@
 .bash_history
 .bash_logout
 .bashrc
+.bin.local
 .bin/ngrok
 .bundle
 .byebug_history
