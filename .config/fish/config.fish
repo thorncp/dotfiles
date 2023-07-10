@@ -1,11 +1,9 @@
 set fish_greeting ""
 set -U fish_features qmark-noglob,ampersand-nobg-in-token
 
-set -x BAT_THEME OneHalfLight
 set -x DIFF colordiff
 set -x EDITOR (which vim)
 set -x FZF_DEFAULT_COMMAND 'ag --hidden -g ""'
-set -x FZF_DEFAULT_OPTS '--color light'
 set -x GOPATH $HOME/go
 set -x GPG_TTY (tty)
 set -x HOMEBREW_NO_ANALYTICS 1

@@ -1,4 +1,3 @@
-config.color_scheme = "256-light"
 config.filter_excluded = [
   "lib/middleware/*",
   "lib/request_context.rb",
