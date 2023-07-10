@@ -75,6 +75,8 @@
 .plotly/
 .profile
 .psql_history
+.pyenv/
+.python_history
 .rediscli_history
 .rubocop.yml
 .sem.yaml
