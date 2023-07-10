@@ -1,5 +1,6 @@
 tap "homebrew/cask-fonts"
 
+brew "bat"
 brew "coreutils"
 brew "curl"
 brew "fish"
