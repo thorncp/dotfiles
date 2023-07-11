@@ -10,6 +10,7 @@
   conflicts = "!$EDITOR $(git diff --name-only --diff-filter=U)"
   d = diff
   dc = diff --cached
+  gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
   l = "ll -12"
   la = "ll --all"
   ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
