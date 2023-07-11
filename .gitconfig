@@ -15,9 +15,6 @@
   la = "ll --all"
   ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
   lt = "ll --simplify-by-decoration"
-  m = "!git switch ${1:-`git main-local`} && git merge - && git b -d @{-1}"
-  main = symbolic-ref --short refs/remotes/origin/HEAD
-  main-local = "!git main | sed 's/origin\\///'"
   p = push -u
   pf = push --force-with-lease
   rba = rebase --abort
