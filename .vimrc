@@ -14,7 +14,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'dense-analysis/ale'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'exu/pgsql.vim', { 'for': 'sql' }
 Plug 'farmergreg/vim-lastplace'
@@ -188,23 +187,8 @@ endif
 " Use ag with ack.vim
 let g:ackprg = 'ag --vimgrep'
 
-" Let CoC handle LSP things
-let g:ale_disable_lsp = 1
-
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
-
-" Don't style ALE markup. The async nature of ALE means sometimes it finishes
-" while a :! command is currently executing, which turns the entire background
-" yellow. This doesn't actually solve the problem, but will leave the background
-" the default color
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-
 highlight SpellBad term=bold ctermbg=darkred
 highlight SpellCap term=bold ctermbg=darkblue
-
-let g:ale_echo_msg_format = '[%linter%] %s - %...code...% [%severity%]'
 
 " Rebuild spell file when entries are added externally
 for d in glob('~/.vim/spell/*.add', 1, 1)

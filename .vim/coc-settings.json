@@ -1,10 +1,9 @@
 {
-  "diagnostic.displayByAle": true,
-  "suggest.floatConfig": {
+  "diagnostic.floatConfig": {
     "border": true,
     "highlight": "black"
   },
-  "diagnostic.floatConfig": {
+  "hover.floatConfig": {
     "border": true,
     "highlight": "black"
   },
@@ -12,8 +11,12 @@
     "border": true,
     "highlight": "black"
   },
-  "hover.floatConfig": {
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
+  "suggest.floatConfig": {
     "border": true,
     "highlight": "black"
-  }
+  },
+  "suggest.noselect": true
 }
