@@ -17,6 +17,7 @@
 .bundle
 .byebug_history
 .cache/
+.circleci/
 .config/BlueSherpa/
 .config/Zeal/
 .config/coc/
