@@ -15,6 +15,7 @@
   la = "ll --all"
   ll = "log --graph --pretty='format:%C(yellow)%h %C(green)%ar %C(cyan)%an %C(red)%d %C(reset)%s'"
   lt = "ll --simplify-by-decoration"
+  main-local = "!cat .git/main-local 2>/dev/null || echo 'main'"
   p = push -u
   pf = push --force-with-lease
   rba = rebase --abort
