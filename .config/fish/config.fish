@@ -19,6 +19,10 @@ function addpaths
     or set -U fish_user_paths $argv $fish_user_paths
 end
 
+if test -e .config/fish/config.local.fish
+  source .config/fish/config.local.fish
+end
+
 addpaths $GOPATH/bin
 addpaths $HOME/.asdf/bin
 addpaths $HOME/.asdf/shims

@@ -26,6 +26,7 @@
 .config/dconf/
 .config/enchant/
 .config/evolution/
+.config/fish/config.local.fish
 .config/fish/fish_variables
 .config/fish/functions/fish_user_key_bindings.fish
 .config/fish/functions/fzf_key_bindings.fish
