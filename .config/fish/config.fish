@@ -10,7 +10,6 @@ set -x HOMEBREW_NO_ANALYTICS 1
 set -x HOMEBREW_NO_AUTO_UPDATE 1
 set -x LESS "--RAW-CONTROL-CHARS --no-init --quit-if-one-screen"
 set -x PIPENV_DONT_LOAD_ENV 1
-set -x PYENV_ROOT $HOME/.pyenv
 set -x SHELL (which fish)
 set -x VISUAL $EDITOR
 
@@ -29,8 +28,6 @@ addpaths $HOME/.asdf/shims
 addpaths $HOME/.bin
 addpaths $HOME/.bin.local
 addpaths $HOME/.fzf/bin
-addpaths $HOME/.local/bin
-addpaths $PYENV_ROOT/bin
 addpaths .git/safe/../../bin
 addpaths /opt/homebrew/bin
 addpaths /usr/local/sbin
@@ -39,5 +36,3 @@ abbr --add g git
 abbr --add v (basename $VISUAL)
 
 alias ag "ag --pager less --color-line-number '1;34'"
-
-pyenv init - | source
