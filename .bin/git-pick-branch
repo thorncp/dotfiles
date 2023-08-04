@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+local_branches="$(git branch --sort=-committerdate)"
+remote_branches="$(git branch --remotes --sort=-committerdate)"
+all_branches="$local_branches\n$remote_branches"
+echo "$all_branches" \
+  | ag -v '^\*' \
+  | ag -v '^\+' \
+  | ag -v '^\s+$' \
+  | sed 's/^  //' \
+  | fzf \
+  | sed 's/origin\///'
