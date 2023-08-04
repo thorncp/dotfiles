@@ -90,6 +90,7 @@
 .solargraph.yml
 .ssh/
 .sudo_as_admin_successful
+.terraform.d/
 .tool-versions
 .vim/.netrwhist
 .vim/plugged/
