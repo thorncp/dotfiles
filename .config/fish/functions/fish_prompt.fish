@@ -10,7 +10,7 @@ function fish_prompt
 
   set_color --background $status_color
   set_color brwhite
-  printf " "(basename (pwd))" "
+  printf "☢︎ "(basename (pwd))" "
 
   if test -n "$git_branch"
     set_color --background white
