@@ -2,7 +2,7 @@ set fish_greeting ""
 set -U fish_features qmark-noglob,ampersand-nobg-in-token
 
 set -x DIFF colordiff
-set -x EDITOR (which vim)
+set -x EDITOR (which nvim)
 set -x FZF_DEFAULT_COMMAND 'ag --hidden -g ""'
 set -x GOPATH $HOME/go
 set -x GPG_TTY (tty)
