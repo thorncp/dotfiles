@@ -22,7 +22,7 @@ function fish_prompt
 
   if test -n "$git_branch"
     set_color --background white
-    set_color brwhite
+    set_color black
     printf '%s ' $git_branch
     set_color --background normal
     set_color white
