@@ -41,6 +41,7 @@
 .config/ibus/
 .config/menus/
 .config/nextjs-nodejs/
+.config/nvim/lazy-lock.json
 .config/nvim/undo/
 .config/op/
 .config/pulse/
@@ -74,6 +75,7 @@
 .node_repl_history
 .notes/
 .npm/
+.nvim.local.lua
 .pgadmin/
 .pgpass
 .pki/
