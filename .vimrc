@@ -18,6 +18,7 @@ Plug 'dense-analysis/ale'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'exu/pgsql.vim', { 'for': 'sql' }
 Plug 'farmergreg/vim-lastplace'
+Plug 'github/copilot.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
@@ -242,3 +243,6 @@ endfunction
 nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" vim.keymap.set('i', '<C-F>', '<Plug>(copilot-accept-word)')
+imap <C-F> <Plug>(copilot-accept-word)
