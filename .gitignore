@@ -19,6 +19,7 @@
 .byebug_history
 .cache/
 .circleci/
+.codex/
 .config/BlueSherpa/
 .config/Zeal/
 .config/coc/
@@ -113,6 +114,7 @@
 .vim/undo/
 .viminfo
 .vimrc.local
+.vscode
 .webdrivers/
 .wget-hsts
 .yarnrc
