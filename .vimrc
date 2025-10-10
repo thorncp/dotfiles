@@ -14,6 +14,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'dense-analysis/ale'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'exu/pgsql.vim', { 'for': 'sql' }
 Plug 'farmergreg/vim-lastplace'
@@ -194,6 +195,12 @@ if filereadable(".git/safe/../../.vimrc.local")
   source .git/safe/../../.vimrc.local
 endif
 
+" Let CoC handle LSP and linting
+let g:ale_disable_lsp = 1
+let g:ale_linters_explicit = 1
+let g:ale_linters = {}
+
+
 " CoC things
 
 set cmdheight=2
@@ -202,12 +209,12 @@ set shortmess+=c
 set signcolumn=number
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction

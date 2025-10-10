@@ -1,22 +1,6 @@
 {
-  "diagnostic.floatConfig": {
-    "border": true,
-    "highlight": "black"
-  },
-  "hover.floatConfig": {
-    "border": true,
-    "highlight": "black"
-  },
-  "signature.floatConfig": {
-    "border": true,
-    "highlight": "black"
-  },
-  "solargraph.diagnostics": true,
-  "solargraph.formatting": true,
-  "solargraph.hover": true,
   "suggest.floatConfig": {
-    "border": true,
-    "highlight": "black"
+    "border": true
   },
   "suggest.noselect": true
 }
