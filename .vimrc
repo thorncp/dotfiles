@@ -34,7 +34,6 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -43,6 +42,10 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-utils/vim-troll-stopper'
+
+" this is currently broken: hitting enter deletes the starting line, instead of
+" adding the ending line
+" Plug 'tpope/vim-endwise'
 
 call plug#end()
 
