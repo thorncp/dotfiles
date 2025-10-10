@@ -22,6 +22,7 @@
 .config/BlueSherpa/
 .config/Zeal/
 .config/coc/
+.config/coc/memos.json
 .config/codeclimate/
 .config/configstore/
 .config/dconf/
