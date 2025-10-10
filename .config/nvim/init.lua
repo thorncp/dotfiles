@@ -113,11 +113,22 @@ lspconfig.eslint.setup({
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
-    "ruby", "javascript", "typescript", "html", "css", "json", "lua", "vim", "sql"
+    "comment",
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "lua",
+    "ruby",
+    "sql",
+    "typescript",
+    "vim",
   },
   highlight = { enable = true },
   indent = { enable = true },
 }
+
+-- vim.api.nvim_set_hl(0, "@text.note", { link = "Search" })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "ruby" },
@@ -126,9 +137,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-require('fzf-lua').setup({'fzf-vim'})
-vim.api.nvim_set_keymap('n', '<C-P>', ':FzfLua files<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>k', ':FzfLua grep_cword<CR>', opts)
+-- require('fzf-lua').setup({'fzf-vim'})
+-- vim.api.nvim_set_keymap('n', '<C-P>', ':FzfLua files<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>k', ':FzfLua grep_cword<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-P>', ':Files <CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>k', ':Ag <C-R><C-W><CR>', opts)
 
 require("autoread").setup({
   -- Check interval in milliseconds
@@ -139,3 +152,14 @@ require("autoread").setup({
   cursor_behavior = "preserve",
 })
 vim.cmd("silent AutoreadOn")
+
+vim.keymap.set('i', '<C-F>', '<Plug>(copilot-accept-word)')
+
+local undo_dir = vim.fn.expand("~/.nvim/undo")
+
+if vim.fn.isdirectory(undo_dir) == 0 then
+  vim.fn.mkdir(undo_dir, "p")
+end
+
+vim.opt.undofile = true
+vim.opt.undodir = undo_dir
