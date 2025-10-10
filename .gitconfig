@@ -26,7 +26,7 @@
   sw = switch
   todo = "!git grep TODO -- $(git diff --name-only ${1:-origin/`git main-local`})"
   wd = diff --word-diff
-  wip = "!f() { git ci --no-gpg-sign -m \"WIP $*\"; }; f"
+  wip = "!f() { git ci -m \"WIP $* [ci skip]\"; }; f"
 [color]
   ui = auto
 [color "diff"]
