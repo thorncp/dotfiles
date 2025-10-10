@@ -43,6 +43,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-utils/vim-troll-stopper'
+Plug 'wsdjeg/vim-fetch'
 
 " this is currently broken: hitting enter deletes the starting line, instead of
 " adding the ending line
