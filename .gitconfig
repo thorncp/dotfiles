@@ -7,7 +7,7 @@
   bd- = branch -D @{-1}
   cb = "!git switch $(git-pick-branch)"
   ci = commit -v
-  conflicts = "!$EDITOR $(git diff --name-only --diff-filter=U)"
+  conflicts = "!$EDITOR -c '/<<<<<<<' $(git diff --name-only --diff-filter=U)"
   d = diff
   dc = diff --cached
   gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
