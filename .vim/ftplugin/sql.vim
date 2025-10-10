@@ -2,6 +2,7 @@ setlocal textwidth=0
 setlocal expandtab
 setlocal shiftwidth=2
 setlocal tabstop=2
+setlocal nospell
 
 let g:sql_type_default = 'pgsql'
 
@@ -9,9 +10,9 @@ let b:ale_fixers = {
 \   'sql': ['pgformatter'],
 \}
 
-let b:ale_sql_pgformatter_options = '--function-case 1 --keyword-case 2 --no-extra-line --spaces 2 --wrap-limit 100'
+" let b:ale_sql_pgformatter_options = '--function-case 1 --keyword-case 2 --no-extra-line --spaces 2 --wrap-limit 100'
 
-let b:ale_fix_on_save = 1
+let b:ale_fix_on_save = 0
 
 setlocal syntax=pgsql
 setlocal commentstring=--\ %s
