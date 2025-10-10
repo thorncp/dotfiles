@@ -145,16 +145,10 @@ nnoremap <LEADER>g :TestVisit<CR>
 
 " Quickly search for the word under the cursor
 nnoremap <LEADER>k :Ag <C-R><C-W><CR>
+nnoremap <LEADER>K :Ag \b<C-R><C-W>\b<CR>
 
 " Extended matching with "%"
 runtime! macros/matchit.vim
-
-" Highlight the current line, only for the buffer with focus
-augroup CursorLine
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END
 
 " Automatically rebalance windows on Vim resize
 autocmd VimResized * :wincmd =
