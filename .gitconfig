@@ -24,7 +24,7 @@
   sha = "!git rev-list --max-count 1 HEAD | tr -d '\n' | tee /dev/tty | pbcopy"
   ss = diff --shortstat
   sw = switch
-  todo = "!git grep TODO -- $(git diff --name-only ${1:-`git main-local`}...HEAD)"
+  todo = "!git grep TODO -- $(git diff --name-only ${1:-origin/`git main-local`})"
   wd = diff --word-diff
   wip = "!f() { git ci --no-gpg-sign -m \"WIP $*\"; }; f"
 [color]
