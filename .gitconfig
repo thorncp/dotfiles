@@ -37,20 +37,14 @@
   autocrlf = input
   commentchar = ";"
   excludesfile = ~/.gitignore
-  pager = delta
-[delta]
-  minus-style = brightred bold ul normal
-  minus-emph-style = auto brightred
-  plus-style = brightgreen bold ul normal
-  plus-emph-style = auto green
-  features = side-by-side line-numbers decorations
-[delta "decorations"]
-  commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
-  file-decoration-style = none
 [diff]
   colorMoved = zebra
   compactionHeuristic = true
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
 [fetch]
   prune = true
   pruneTags = true
@@ -64,10 +58,10 @@
   path = ~/.gitconfig.local
 [init]
   defaultBranch = main
-[interactive]
-  diffFilter = delta --color-only
 [merge]
   ff = only
+[pager]
+  difftool = true
 [pull]
   rebase = true
 [push]
