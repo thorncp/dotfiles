@@ -18,6 +18,7 @@ Plug 'dense-analysis/ale'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'exu/pgsql.vim', { 'for': 'sql' }
 Plug 'farmergreg/vim-lastplace'
+Plug 'hashivim/vim-terraform'
 Plug 'janko-m/vim-test'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
