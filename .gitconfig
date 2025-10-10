@@ -30,9 +30,10 @@
 [color]
   ui = auto
 [color "diff"]
-  meta = black bold
+  meta = blue
 [commit]
   gpgsign = true
+  template = /Users/chris/.gitmessage
 [core]
   autocrlf = input
   commentchar = ";"
@@ -65,6 +66,7 @@
 [pull]
   rebase = true
 [push]
+  autoSetupRemote = true
   default = current
 [rebase]
   autosquash = true
