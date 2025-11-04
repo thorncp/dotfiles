@@ -1,0 +1,9 @@
+.nvim.local.lua
+.solargraph.yml
+.tool-versions
+.vimrc.local
+/tags
+bin/db
+bin/dbr
+tmp.*
+tmp/**/*

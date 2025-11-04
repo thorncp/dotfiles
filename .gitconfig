@@ -37,7 +37,7 @@
 [core]
   autocrlf = input
   commentchar = ";"
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.global.gitignore
 [diff]
   colorMoved = zebra
   compactionHeuristic = true
