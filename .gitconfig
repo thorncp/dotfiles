@@ -1,3 +1,5 @@
+[advice]
+  skippedCherryPicks = false
 [alias]
   aa = add --all
   amend = "!git commit --amend -C HEAD --date=$(date +%Y-%m-%dT%H:%M:%S)"
