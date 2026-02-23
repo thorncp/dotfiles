@@ -12,6 +12,7 @@ set -x LESS "--RAW-CONTROL-CHARS --no-init --quit-if-one-screen"
 set -x PIPENV_DONT_LOAD_ENV 1
 set -x SHELL (which fish)
 set -x VISUAL $EDITOR
+set -x PSQL_PAGER less -S
 
 function addpaths
   contains -- $argv $fish_user_paths
