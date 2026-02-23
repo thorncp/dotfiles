@@ -149,6 +149,7 @@ google-cloud-sdk/
 log/*.log
 programming.utf-8.spl
 rerun.txt
+sdk/
 snap/
 tmp.*
 tmp/**/*
