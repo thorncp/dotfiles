@@ -10,8 +10,11 @@ function! ExecRuby(path)
   " Opt-in to using rails runner, which often has spring setup, for faster runs
   if getline(1) == "# rails runner"
     exec ":!clear; rails runner " . a:path
+  " else if a Gemfile is present, use bundle exec
+  elseif filereadable("Gemfile")
+    exec ":!clear; asdf exec bundle exec ruby " . a:path
   else
-    exec ":!clear; ruby " . a:path
+    exec ":!clear; asdf exec ruby " . a:path
   endif
 endfunction
 
