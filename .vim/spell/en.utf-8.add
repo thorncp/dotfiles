@@ -3,6 +3,7 @@ AGGrid
 AML
 AVH
 ActiveRecord
+Aliados
 Async
 Au10tix
 CIP
@@ -119,6 +120,7 @@ kwargs
 ledgering
 lifecycle
 linter
+llm
 mentee
 metaprogrammed
 microservices
@@ -153,6 +155,7 @@ stringifies
 stringify
 stylesheets
 subquery
+sunsetting
 thor
 thoughtbot
 timespans
