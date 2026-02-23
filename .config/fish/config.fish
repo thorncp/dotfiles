@@ -29,6 +29,7 @@ addpaths $HOME/.bin
 addpaths $HOME/.bin.local
 addpaths $HOME/.fzf/bin
 addpaths .git/safe/../../bin
+addpaths /opt/homebrew/sbin
 addpaths /opt/homebrew/bin
 addpaths /usr/local/sbin
 
