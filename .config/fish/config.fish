@@ -37,3 +37,5 @@ abbr --add g git
 abbr --add v (basename $VISUAL)
 
 alias ag "ag --pager less --color-line-number '1;34'"
+
+fish_config theme choose ayu-mirage
