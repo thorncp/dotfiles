@@ -73,6 +73,8 @@
 .gnupg/
 .gsutil/
 .hex/
+.homebrew/trust.json
+.homebrew/trust.json.lock
 .irb_history
 .irbhistory
 .lesshst
