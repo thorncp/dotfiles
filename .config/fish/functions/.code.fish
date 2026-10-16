@@ -1,5 +1,5 @@
 function .code
-  set -l code_path (find ~/code -maxdepth 2 -type d | fzf)
+  set -l code_path (fd . ~/code --type d --max-depth 2 | fzf)
   if test -n "$code_path"
     cd "$code_path"
     and clear
