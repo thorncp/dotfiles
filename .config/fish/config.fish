@@ -36,5 +36,6 @@ addpaths /usr/local/sbin
 abbr --add g git
 abbr --add v (basename $VISUAL)
 
+ulimit -n 2560
 
 fish_config theme choose ayu-mirage
