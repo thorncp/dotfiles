@@ -3,7 +3,7 @@ set -U fish_features qmark-noglob,ampersand-nobg-in-token
 
 set -x DIFF colordiff
 set -x EDITOR (which vim)
-set -x FZF_DEFAULT_COMMAND 'ag --hidden -g ""'
+set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x GOPATH $HOME/go
 set -x GPG_TTY (tty)
 set -x HOMEBREW_NO_ANALYTICS 1
@@ -36,6 +36,5 @@ addpaths /usr/local/sbin
 abbr --add g git
 abbr --add v (basename $VISUAL)
 
-alias ag "ag --pager less --color-line-number '1;34'"
 
 fish_config theme choose ayu-mirage

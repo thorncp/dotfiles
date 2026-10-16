@@ -59,7 +59,7 @@ class FindCommand
     end
 
     query = args.join(" ")
-    file_with_match = `ag '#{query}' #{config.directory} | fzf`.strip
+    file_with_match = `rg '#{query}' #{config.directory} | fzf`.strip
     matches = file_with_match.match(/\A(?<path>[^:]+):(?<line>\d+)/)
 
     if matches
