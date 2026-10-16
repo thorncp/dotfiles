@@ -132,6 +132,7 @@ nnoremap <C-L> <C-W>l
 
 " Map ctrl+p to FZF because muscle memory is hard to break
 nnoremap <C-P> :FZF<CR>
+let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.6}}
 
 " Disable search highlight on return and perform default behavior
 nnoremap <CR> :nohlsearch<CR><CR>
