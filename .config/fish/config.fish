@@ -13,6 +13,8 @@ set -x PIPENV_DONT_LOAD_ENV 1
 set -x SHELL (which fish)
 set -x VISUAL $EDITOR
 set -x PSQL_PAGER less -S
+set -x TF_CLI_ARGS_plan "-parallelism=200"
+set -x TF_CLI_ARGS_apply "-parallelism=200"
 
 function addpaths
   set -l paths $argv
