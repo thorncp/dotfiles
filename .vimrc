@@ -198,8 +198,24 @@ for d in glob('~/.vim/spell/*.add', 1, 1)
   endif
 endfor
 
-if filereadable(".git/safe/../../.vimrc.local")
-  source .git/safe/../../.vimrc.local
+" If .git is a directrory, we're in a repo. If it's a file, we might be in a
+" worktree. In both cases, find the an appropriate .git/safe flag and support
+" local configs.
+if isdirectory('.git')
+  if filereadable('.git/safe/../../.vimrc.local')
+    source .git/safe/../../.vimrc.local
+  endif
+elseif filereadable('.git')
+  let s:git_dir = trim(system('git rev-parse --absolute-git-dir 2>/dev/null'))
+
+  if v:shell_error == 0 && isdirectory(s:git_dir . '/safe')
+    let s:root = trim(system('git rev-parse --show-toplevel 2>/dev/null'))
+    let s:vimrc = s:root . '/.vimrc.local'
+
+    if filereadable(s:vimrc)
+      execute 'source' fnameescape(s:vimrc)
+    endif
+  endif
 endif
 
 " Let CoC handle LSP and linting
