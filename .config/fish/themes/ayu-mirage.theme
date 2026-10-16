@@ -11,12 +11,12 @@ fish_color_history_current --bold
 fish_color_host normal
 fish_color_host_remote yellow
 fish_color_normal CBCCC6
-fish_color_operator FFCC66
+fish_color_operator 81A2BE
 fish_color_param CBCCC6
 fish_color_quote BAE67E
 fish_color_redirection D4BFFF
-fish_color_search_match --bold --background=FFCC66
-fish_color_selection --bold --background=FFCC66
+fish_color_search_match --bold --background=81A2BE
+fish_color_selection --bold --background=81A2BE
 fish_color_status red
 fish_color_user brgreen
 fish_color_valid_path --underline=single
@@ -24,7 +24,7 @@ fish_pager_color_completion normal
 fish_pager_color_description B3A06D
 fish_pager_color_prefix normal --bold --underline=single
 fish_pager_color_progress brwhite --bold --background=cyan
-fish_pager_color_selected_background --background=FFCC66
+fish_pager_color_selected_background --background=81A2BE
 fish_pager_color_selected_completion
 fish_pager_color_selected_description
 fish_pager_color_selected_prefix
