@@ -2,5 +2,6 @@
   "suggest.floatConfig": {
     "border": true
   },
-  "suggest.noselect": true
+  "suggest.noselect": true,
+  "tsserver.useLocalTsdk": true
 }
