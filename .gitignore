@@ -105,6 +105,7 @@
 .solargraph
 .solargraph.yml
 .sqlanywhere17/
+.sqlite_history
 .ssh/
 .sudo_as_admin_successful
 .swiftpm/

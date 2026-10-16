@@ -1,0 +1,5 @@
+.mode column
+.headers on
+.width auto
+.nullvalue ø
+.timer on
