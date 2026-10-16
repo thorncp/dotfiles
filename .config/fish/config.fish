@@ -31,6 +31,11 @@ if test -e ~/.config/fish/config.local.fish
   source ~/.config/fish/config.local.fish
 end
 
+if test -d "$HOME/.bun"
+  set --export BUN_INSTALL "$HOME/.bun"
+  addpaths $BUN_INSTALL/bin
+end
+
 # we want these at the beginning of $PATH, in the order provided here. i.e.
 # .git/safe will override everything
 addpaths .git/safe/../../bin \
