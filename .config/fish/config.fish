@@ -15,23 +15,28 @@ set -x VISUAL $EDITOR
 set -x PSQL_PAGER less -S
 
 function addpaths
-  contains -- $argv $fish_user_paths
-    or set -U fish_user_paths $argv $fish_user_paths
+  set -l paths $argv
+  for entry in $fish_user_paths
+    contains -- $entry $paths; or set -a paths $entry
+  end
+  set -g fish_user_paths $paths
 end
+
+# set up lowest priority first. these will be at the end of $PATH
+addpaths /opt/homebrew/bin /opt/homebrew/sbin /usr/local/sbin
 
 if test -e ~/.config/fish/config.local.fish
   source ~/.config/fish/config.local.fish
 end
 
-addpaths $GOPATH/bin
-addpaths $HOME/.asdf/shims
-addpaths $HOME/.bin
-addpaths $HOME/.bin.local
-addpaths $HOME/.fzf/bin
-addpaths .git/safe/../../bin
-addpaths /opt/homebrew/sbin
-addpaths /opt/homebrew/bin
-addpaths /usr/local/sbin
+# we want these at the beginning of $PATH, in the order provided here. i.e.
+# .git/safe will override everything
+addpaths .git/safe/../../bin \
+  $HOME/.bin.local \
+  $HOME/.bin \
+  $HOME/.asdf/shims \
+  $GOPATH/bin \
+  $HOME/.fzf/bin
 
 abbr --add g git
 abbr --add v (basename $VISUAL)
