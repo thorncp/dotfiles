@@ -63,6 +63,7 @@
   defaultBranch = main
 [merge]
   ff = only
+  conflictStyle = zdiff3
 [pager]
   difftool = true
 [pull]
