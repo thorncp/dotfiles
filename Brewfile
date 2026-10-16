@@ -1,4 +1,5 @@
 brew "bat"
+brew "glow"
 brew "colordiff"
 brew "coreutils"
 brew "curl"
