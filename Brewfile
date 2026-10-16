@@ -1,5 +1,3 @@
-tap "homebrew/cask-fonts"
-
 brew "bat"
 brew "colordiff"
 brew "coreutils"
@@ -20,5 +18,3 @@ brew "tmux"
 brew "tree"
 brew "vim"
 brew "watch"
-
-cask "font-source-code-pro"
